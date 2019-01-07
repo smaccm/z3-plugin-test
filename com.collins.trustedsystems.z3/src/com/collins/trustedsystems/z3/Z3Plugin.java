@@ -28,7 +28,7 @@ public class Z3Plugin {
 		String name = System.getProperty("os.name").toLowerCase();
 		String arch = System.getProperty("os.arch").toLowerCase();
 
-		if (name.contains("win32")) {
+		if (name.contains("win32") || name.contains("windows")) {
 			if (arch.contains("64")) {
 				return "win32.x86_64";
 			} else {
