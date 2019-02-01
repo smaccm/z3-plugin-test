@@ -5,14 +5,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.collins.trustedsystems.z3</groupId>
 	<parent>
-		<groupId>com.collins.trustedsystems.fmcpn</groupId>
-		<artifactId>com.collins.trustedsystems.fmcpn.parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../../colored-petri-nets/com.collins.trustedsystems.fmcpn.parent/pom.xml</relativePath>
+		<groupId>com.collins.trustedsystems.z3</groupId>
+		<artifactId>com.collins.trustedsystems.z3.parent</artifactId>
+		<version>4.7.1-SNAPSHOT</version>
+		<relativePath>../com.collins.trustedsystems.z3.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>com.collins.trustedsystems.z3</artifactId>
-	<version>4.7.1-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 </project>
