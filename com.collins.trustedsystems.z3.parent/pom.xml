@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.collins.trustedsystems.z3</groupId>
-	<version>4.7.1-SNAPSHOT</version>
+	<version>4.7.1.release</version>
 	<artifactId>com.collins.trustedsystems.z3.parent</artifactId>
 	<packaging>pom</packaging>
 
@@ -90,7 +90,7 @@
 						<artifact>
 							<groupId>com.collins.trustedsystems.fmcpn</groupId>
 							<artifactId>com.collins.trustedsystems.fmcpn.target</artifactId>
-							<version>1.0.0-SNAPSHOT</version>
+							<version>1.0.0.release</version>
 						</artifact>
 					</target>
 					<environments>
