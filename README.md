@@ -35,6 +35,5 @@ MANIFESTMF, feature.xml and various pom.xml files for the projects.  These are:
 As this plugin is rarely likely to have SNAPSHOT builds and manual management
 of the seven locations that the version numbers appear does not seem that
 onerous, we have not yet started using a release workflow plugin such as
-[Tycho Release Workflow]
-(https://wiki.eclipse.org/Tycho/Release_Workflow#Prepare_the_release) or
+[Tycho Release Workflow](https://wiki.eclipse.org/Tycho/Release_Workflow) or
 [unleash-maven-plugin](https://github.com/shillner/unleash-maven-plugin).
