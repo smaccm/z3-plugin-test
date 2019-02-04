@@ -2,7 +2,7 @@
 <feature
       id="com.collins.trustedsystems.z3.feature"
       label="Z3 Plugin"
-      version="4.7.1.qualifier"
+      version="4.7.1"
       provider-name="Collins Aerospace">
 
    <description url="https://github.com/smaccm/z3-plugins">
