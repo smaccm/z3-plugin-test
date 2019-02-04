@@ -6,7 +6,6 @@
 		<groupId>com.collins.trustedsystems.z3</groupId>
 		<artifactId>com.collins.trustedsystems.z3.parent</artifactId>
 		<version>4.7.1</version>
-		<relativePath>../com.collins.trustedsystems.z3.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>com.collins.trustedsystems.z3.target</artifactId>
 	<packaging>eclipse-target-definition</packaging>
