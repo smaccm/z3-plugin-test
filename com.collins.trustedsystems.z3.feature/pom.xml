@@ -29,6 +29,13 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<excludes>
+						<plugin id="com.collins.trustedsystems.z3.linux.gtk.x86_64" />
+						<plugin id="com.collins.trustedsystems.z3.macosx.cocoa.x86_64" />
+						<plugin id="com.collins.trustedsystems.z3.win32.win32.x86_64" />
+					</excludes>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>

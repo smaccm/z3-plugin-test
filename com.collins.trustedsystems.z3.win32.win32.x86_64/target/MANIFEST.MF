@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.collins.trustedsystems.z3.win32.win32.x86_6
+ 4
+Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;
+ singleton:=true
+Bundle-Name: Z3 Windows win32 x86_64 binaries
+Bundle-Version: 4.7.1
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-PlatformFilter: (& (osgi.os=win32) (osgi.ws=win32) (osgi.arch=
+ x86_64) )
+Bundle-Vendor: Collins Aerospace
+Fragment-Host: com.collins.trustedsystems.z3;bundle-version="4.7.1"
+
