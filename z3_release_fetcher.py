@@ -555,6 +555,92 @@ TARGET_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4.
 </project>
 ''')
 
+REPOSITORY_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.collins.trustedsystems.z3</groupId>
+        <artifactId>com.collins.trustedsystems.z3.parent</artifactId>
+        <version>${plugin_version}</version>
+    </parent>
+    <artifactId>com.collins.trustedsystems.z3.repository</artifactId>
+    <packaging>eclipse-repository</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho.extras</groupId>
+                <artifactId>tycho-p2-extras-plugin</artifactId>
+                <version>$${tycho.version}</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>mirror</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <destination>${project.build.directory}/repository</destination>
+                    <source>
+                        <repository>
+                            <url>https://raw.githubusercontent.com/smaccm/z3-plugin-updates-test/master/</url>
+                            <layout>p2</layout>
+                            <!-- supported layouts are "p2-metadata", "p2-artifacts", and "p2" (for joint repositories; default) -->
+                        </repository>
+                    </source>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.apache.maven.plugins
+                                        </groupId>
+                                        <artifactId>
+                                            maven-clean-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [2.5,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>clean</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+    </dependencies>
+</project>
+''')
+
+REPOSITORY_CATEGORY_TEMPLATE = Template('''<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.collins.trustedsystems.z3.feature_${plugin_version}.jar" id="com.collins.trustedsystems.z3.feature" version="${plugin_version}">
+      <category name="main"/>
+   </feature>
+   <category-def name="main" label="Z3-Plugin"/>
+</site>''')
+
 __all__ = []
 __version__ = 0.1
 __date__ = '2019-03-29'
@@ -759,6 +845,12 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
         with open(os.path.join(TARGET_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(TARGET_POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
+
+        with open(os.path.join(REPO_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+            text_file.write(REPOSITORY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
+
+        with open(os.path.join(REPO_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
+            text_file.write(REPOSITORY_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
 
         # Launch maven to build repository
         subprocess.call(['mvn', 'clean', 'verify'])
