@@ -60,6 +60,7 @@ POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4.0.0" xm
         <module>com.collins.trustedsystems.z3.feature</module>
         <module>com.collins.trustedsystems.z3.target</module>
         <module>com.collins.trustedsystems.z3.repository</module>
+        <module>com.collins.trustedsystems.z3.updates</module>
     </modules>
     <build>
         <plugins>
@@ -567,6 +568,67 @@ REPOSITORY_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/PO
     <packaging>eclipse-repository</packaging>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.apache.maven.plugins
+                                        </groupId>
+                                        <artifactId>
+                                            maven-clean-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [2.5,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>clean</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+    </dependencies>
+</project>
+''')
+
+REPOSITORY_CATEGORY_TEMPLATE = Template('''<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.collins.trustedsystems.z3.feature_${plugin_version}.jar" id="com.collins.trustedsystems.z3.feature" version="${plugin_version}">
+      <category name="main"/>
+   </feature>
+   <category-def name="main" label="Z3-Plugin"/>
+</site>''')
+
+UPDATES_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.collins.trustedsystems.z3</groupId>
+        <artifactId>com.collins.trustedsystems.z3.parent</artifactId>
+        <version>${plugin_version}</version>
+    </parent>
+    <artifactId>com.collins.trustedsystems.z3.updates</artifactId>
+    <packaging>eclipse-repository</packaging>
+
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.eclipse.tycho.extras</groupId>
@@ -633,7 +695,7 @@ REPOSITORY_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/PO
 </project>
 ''')
 
-REPOSITORY_CATEGORY_TEMPLATE = Template('''<?xml version="1.0" encoding="UTF-8"?>
+UPDATES_CATEGORY_TEMPLATE = Template('''<?xml version="1.0" encoding="UTF-8"?>
 <site>
    <feature url="features/com.collins.trustedsystems.z3.feature_${plugin_version}.jar" id="com.collins.trustedsystems.z3.feature" version="${plugin_version}">
       <category name="main"/>
@@ -653,6 +715,7 @@ LINUX_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'linux.gtk.x86_64'])
 MACOS_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'macosx.cocoa.x86_64'])
 WIN32_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'win32.win32.x86_64'])
 REPO_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'repository'])
+UPDATES_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'updates'])
 TARGET_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'target'])
 
 DEBUG = 1
@@ -665,7 +728,7 @@ Z3_PROVER_REPO = 'z3'
 Z3_PROVER_REQUEST = '/'.join([GITHUB_API, Z3_PROVER_OWNER, Z3_PROVER_REPO, GITHUB_RELEASES])
 
 Z3_PLUGIN_OWNER = 'smaccm'
-Z3_PLUGIN_REPO = 'z3-plugin-updates-test'
+Z3_PLUGIN_REPO = 'z3-plugin-test'
 Z3_PLUGIN_REQUEST = '/'.join([GITHUB_API, Z3_PLUGIN_OWNER, Z3_PLUGIN_REPO, GITHUB_RELEASES])
 
 class CLIError(Exception):
@@ -852,15 +915,21 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         with open(os.path.join(REPO_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
             text_file.write(REPOSITORY_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
 
+        with open(os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+            text_file.write(UPDATES_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
+
+        with open(os.path.join(UPDATES_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
+            text_file.write(UPDATES_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
+
         # Launch maven to build repository
         subprocess.call(['mvn', 'clean', 'verify'])
 
         # Commit/push this repository
-        gitrepo.git.add('-A')
-        gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
-        gitrepo.git.tag(plugin_version)
-        gitrepo.git.push()
-        gitrepo.git.push('--tags')
+        #gitrepo.git.add('-A')
+        #gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
+        #gitrepo.git.tag(plugin_version)
+        #gitrepo.git.push()
+        #gitrepo.git.push('--tags')
 
     else:
         sys.stderr.write('Cannot find release description for %s' % (z3_version))
@@ -925,9 +994,8 @@ def main(argv=None): # IGNORE:C0111
         z3_releases = z3_response.json()
         z3_versions = [rel['tag_name'] for rel in z3_releases]
 
-        #extant_plugin_releases = requests.get(Z3_PLUGIN_REQUEST).json()
-        #extant_plugin_versions = [rel['tag_name'] for rel in extant_plugin_releases]
-        extant_plugin_versions = ['4.7.1']
+        extant_plugin_releases = requests.get(Z3_PLUGIN_REQUEST).json()
+        extant_plugin_versions = [rel['tag_name'] for rel in extant_plugin_releases]
 
         # filter out the versions matching the exclude pattern
         if expattern:

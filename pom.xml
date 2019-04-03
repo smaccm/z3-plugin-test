@@ -29,6 +29,7 @@
         <module>com.collins.trustedsystems.z3.feature</module>
         <module>com.collins.trustedsystems.z3.target</module>
         <module>com.collins.trustedsystems.z3.repository</module>
+        <module>com.collins.trustedsystems.z3.updates</module>
     </modules>
     <build>
         <plugins>
