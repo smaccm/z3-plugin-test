@@ -856,10 +856,11 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         subprocess.call(['mvn', 'clean', 'verify'])
 
         # Commit/push this repository
-        #gitrepo.git.commit('-am', 'Package plugin version %s' % (plugin_version))
-        #gitrepo.git.tag(plugin_version)
-        #gitrepo.git.push()
-        #gitrepo.git.push('--tags')
+        gitrepo.git.add('-A')
+        gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
+        gitrepo.git.tag(plugin_version)
+        gitrepo.git.push()
+        gitrepo.git.push('--tags')
 
     else:
         sys.stderr.write('Cannot find release description for %s' % (z3_version))
