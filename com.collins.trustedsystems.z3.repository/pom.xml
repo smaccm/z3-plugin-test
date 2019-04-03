@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.collins.trustedsystems.z3</groupId>
         <artifactId>com.collins.trustedsystems.z3.parent</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
     </parent>
     <artifactId>com.collins.trustedsystems.z3.repository</artifactId>
     <packaging>eclipse-repository</packaging>
@@ -29,7 +29,7 @@
                         <repository>
                             <url>https://raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.repository/target/repository/</url>
                             <layout>p2</layout>
-                            <!--supported layouts are "p2-metadata", "p2-artifacts", and "p2" (for joint repositories; default) -->
+                            <!-- supported layouts are "p2-metadata", "p2-artifacts", and "p2" (for joint repositories; default) -->
                         </repository>
                     </source>
                 </configuration>

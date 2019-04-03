@@ -2,80 +2,116 @@
 <?metadataRepository version='1.2.0'?>
 <repository name='TychoTargetPlatform' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='0.0.1'>
   <units size='16'>
-    <unit id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.5.0' generation='2'>
-      <update id='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[0.0.0,4.5.0)' severity='0'/>
+    <unit id='com.collins.trustedsystems.z3' version='4.6.0' singleton='false' generation='2'>
+      <update id='com.collins.trustedsystems.z3' range='[0.0.0,4.6.0)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-version' value='4.6.0'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' version='4.6.0'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3' version='4.6.0'/>
+        <provided namespace='java.package' name='com.collins.trustedsystems.z3' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3' version='4.6.0'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3' version='4.6.0'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.collins.trustedsystems.z3&#xA;Bundle-Version: 4.6.0
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.6.0' generation='2'>
+      <update id='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[0.0.0,4.6.0)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
         <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3.linux.gtk.x86_64'/>
-        <property name='maven-version' value='4.5.0'/>
+        <property name='maven-version' value='4.6.0'/>
       </properties>
       <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.5.0'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.5.0'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.5.0'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.6.0'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.6.0'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.6.0'>
           <properties size='1'>
             <property name='type' value='osgi.fragment'/>
           </properties>
         </provided>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.5.0'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.6.0'/>
       </provides>
       <requires size='2'>
-        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.5.0'/>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.6.0'/>
         <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
       </requires>
       <filter>
         (&amp;(osgi.arch=x86_64)(osgi.os=linux)(osgi.ws=gtk))
       </filter>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.5.0'/>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.6.0'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3.linux.gtk.x86_64;singleton:=true&#xA;Bundle-Version: 4.5.0&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.5.0&quot;
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.linux.gtk.x86_64;singleton:=true&#xA;Bundle-Version: 4.6.0&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.6.0&quot;
           </instruction>
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.5.0' generation='2'>
-      <update id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[0.0.0,4.5.0)' severity='0'/>
+    <unit id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0' generation='2'>
+      <update id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[0.0.0,4.6.0)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
         <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3.macosx.cocoa.x86_64'/>
-        <property name='maven-version' value='4.5.0'/>
+        <property name='maven-version' value='4.6.0'/>
       </properties>
       <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.5.0'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.5.0'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.5.0'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'>
           <properties size='1'>
             <property name='type' value='osgi.fragment'/>
           </properties>
         </provided>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.5.0'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.6.0'/>
       </provides>
       <requires size='2'>
-        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.5.0'/>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.6.0'/>
         <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
       </requires>
       <filter>
         (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
       </filter>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.5.0'/>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true&#xA;Bundle-Version: 4.5.0&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.5.0&quot;
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true&#xA;Bundle-Version: 4.6.0&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.6.0&quot;
           </instruction>
         </instructions>
       </touchpointData>
@@ -507,44 +543,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.collins.trustedsystems.z3.feature.feature.jar' version='4.5.0'>
-      <properties size='7'>
-        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
-        <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='https://github.com/smaccm/z3-plugins'/>
-        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
-        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
-        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
-        <property name='maven-version' value='4.5.0'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' version='4.5.0'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='com.collins.trustedsystems.z3.feature' version='4.5.0'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='com.collins.trustedsystems.z3.feature' version='4.5.0'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-      <licenses size='1'>
-        <license uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
-          Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved. &#xA;MIT License&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;&quot;Software&quot;&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&#xA;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        </license>
-      </licenses>
-      <copyright uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
-        Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
-      </copyright>
-    </unit>
     <unit id='org.eclipse.core.jobs' version='3.10.200.v20180912-1356' generation='2'>
       <update id='org.eclipse.core.jobs' range='[0.0.0,3.10.200.v20180912-1356)' severity='0'/>
       <properties size='8'>
@@ -646,6 +644,44 @@
           </instruction>
         </instructions>
       </touchpointData>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.feature.feature.jar' version='4.6.0'>
+      <properties size='7'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
+        <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='https://github.com/smaccm/z3-plugins'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
+        <property name='maven-version' value='4.6.0'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' version='4.6.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='com.collins.trustedsystems.z3.feature' version='4.6.0'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='com.collins.trustedsystems.z3.feature' version='4.6.0'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+          Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved. &#xA;MIT License&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;&quot;Software&quot;&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&#xA;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        </license>
+      </licenses>
+      <copyright uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+        Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
+      </copyright>
     </unit>
     <unit id='org.eclipse.equinox.preferences' version='3.7.200.v20180827-1235' generation='2'>
       <update id='org.eclipse.equinox.preferences' range='[0.0.0,3.7.200.v20180827-1235)' severity='0'/>
@@ -953,6 +989,93 @@
       </provides>
       <touchpoint id='org.eclipse.equinox.p2.native' version='1.0.0'/>
     </unit>
+    <unit id='com.collins.trustedsystems.z3.feature.feature.group' version='4.6.0' singleton='false'>
+      <update id='com.collins.trustedsystems.z3.feature.feature.group' range='[0.0.0,4.6.0)' severity='0'/>
+      <properties size='8'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
+        <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='https://github.com/smaccm/z3-plugins'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
+        <property name='maven-version' value='4.6.0'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.group' version='4.6.0'/>
+      </provides>
+      <requires size='5'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' range='[4.6.0,4.6.0]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[4.6.0,4.6.0]'>
+          <filter>
+            (&amp;(osgi.arch=x86_64)(osgi.os=linux)(osgi.ws=gtk))
+          </filter>
+        </required>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[4.6.0,4.6.0]'>
+          <filter>
+            (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
+          </filter>
+        </required>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[4.6.0,4.6.0]'>
+          <filter>
+            (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
+          </filter>
+        </required>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' range='[4.6.0,4.6.0]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+      <licenses size='1'>
+        <license uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+          Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved. &#xA;MIT License&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;&quot;Software&quot;&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&#xA;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        </license>
+      </licenses>
+      <copyright uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+        Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
+      </copyright>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.6.0' generation='2'>
+      <update id='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[0.0.0,4.6.0)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.win32.win32.x86_64'/>
+        <property name='maven-version' value='4.6.0'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.6.0'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.6.0'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.6.0'>
+          <properties size='1'>
+            <property name='type' value='osgi.fragment'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.6.0'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.6.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.6.0'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;singleton:=true&#xA;Bundle-Version: 4.6.0&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.6.0&quot;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
     <unit id='config.a.jre.javase' version='9.0.0' singleton='false'>
       <hostRequirements size='1'>
         <required namespace='org.eclipse.equinox.p2.iu' name='a.jre.javase' range='9.0.0'/>
@@ -971,129 +1094,6 @@
         <instructions size='1'>
           <instruction key='install'>
 
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
-    <unit id='com.collins.trustedsystems.z3.feature.feature.group' version='4.5.0' singleton='false'>
-      <update id='com.collins.trustedsystems.z3.feature.feature.group' range='[0.0.0,4.5.0)' severity='0'/>
-      <properties size='8'>
-        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
-        <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
-        <property name='org.eclipse.equinox.p2.description.url' value='https://github.com/smaccm/z3-plugins'/>
-        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
-        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
-        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
-        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
-        <property name='maven-version' value='4.5.0'/>
-      </properties>
-      <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.group' version='4.5.0'/>
-      </provides>
-      <requires size='5'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' range='[4.5.0,4.5.0]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[4.5.0,4.5.0]'>
-          <filter>
-            (&amp;(osgi.arch=x86_64)(osgi.os=linux)(osgi.ws=gtk))
-          </filter>
-        </required>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[4.5.0,4.5.0]'>
-          <filter>
-            (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
-          </filter>
-        </required>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[4.5.0,4.5.0]'>
-          <filter>
-            (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
-          </filter>
-        </required>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' range='[4.5.0,4.5.0]'>
-          <filter>
-            (org.eclipse.update.install.features=true)
-          </filter>
-        </required>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
-      <licenses size='1'>
-        <license uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
-          Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved. &#xA;MIT License&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;&quot;Software&quot;&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&#xA;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        </license>
-      </licenses>
-      <copyright uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
-        Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
-      </copyright>
-    </unit>
-    <unit id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.5.0' generation='2'>
-      <update id='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[0.0.0,4.5.0)' severity='0'/>
-      <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
-        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
-        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
-        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.win32.win32.x86_64'/>
-        <property name='maven-version' value='4.5.0'/>
-      </properties>
-      <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.5.0'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.5.0'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.5.0'>
-          <properties size='1'>
-            <property name='type' value='osgi.fragment'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.5.0'/>
-      </provides>
-      <requires size='2'>
-        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.5.0'/>
-        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
-      </requires>
-      <filter>
-        (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.5.0'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;singleton:=true&#xA;Bundle-Version: 4.5.0&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.5.0&quot;
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
-    <unit id='com.collins.trustedsystems.z3' version='4.5.0' singleton='false' generation='2'>
-      <update id='com.collins.trustedsystems.z3' range='[0.0.0,4.5.0)' severity='0'/>
-      <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
-        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
-        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
-        <property name='maven-artifactId' value='com.collins.trustedsystems.z3'/>
-        <property name='maven-version' value='4.5.0'/>
-      </properties>
-      <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' version='4.5.0'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3' version='4.5.0'/>
-        <provided namespace='java.package' name='com.collins.trustedsystems.z3' version='0.0.0'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3' version='4.5.0'>
-          <properties size='1'>
-            <property name='type' value='osgi.bundle'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='2'>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
-        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3' version='4.5.0'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3&#xA;Bundle-Version: 4.5.0
           </instruction>
         </instructions>
       </touchpointData>
