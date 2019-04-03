@@ -1,0 +1,1102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadataRepository version='1.2.0'?>
+<repository name='TychoTargetPlatform' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='0.0.1'>
+  <units size='16'>
+    <unit id='com.collins.trustedsystems.z3' version='4.7.1' singleton='false' generation='2'>
+      <update id='com.collins.trustedsystems.z3' range='[0.0.0,4.7.1)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-version' value='4.7.1'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' version='4.7.1'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3' version='4.7.1'/>
+        <provided namespace='java.package' name='com.collins.trustedsystems.z3' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3' version='4.7.1'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3' version='4.7.1'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.collins.trustedsystems.z3&#xA;Bundle-Version: 4.7.1
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.core.contenttype' version='3.7.200.v20181107-1343' generation='2'>
+      <update id='org.eclipse.core.contenttype' range='[0.0.0,3.7.200.v20181107-1343)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='Eclipse Content Mechanism'/>
+        <property name='df_LT.providerName' value='Eclipse.org'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.core'/>
+        <property name='maven-artifactId' value='org.eclipse.core.contenttype'/>
+        <property name='maven-version' value='3.7.200-SNAPSHOT'/>
+      </properties>
+      <provides size='7'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.contenttype' version='3.7.200.v20181107-1343'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.core.contenttype' version='3.7.200.v20181107-1343'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.content' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime.content' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='org.eclipse.core.contenttype' version='3.7.200.v20181107-1343'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='12'>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.preferences' range='[3.2.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.registry' range='[3.2.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='[3.2.0,4.0.0)'/>
+        <required namespace='java.package' name='javax.xml.parsers' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.debug' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.util' range='1.0.0'/>
+        <required namespace='java.package' name='org.osgi.framework' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.util.tracker' range='0.0.0'/>
+        <required namespace='java.package' name='org.xml.sax' range='0.0.0'/>
+        <required namespace='java.package' name='org.xml.sax.ext' range='0.0.0'/>
+        <required namespace='java.package' name='org.xml.sax.helpers' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.core.contenttype' version='3.7.200.v20181107-1343'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.core.contenttype; singleton:=true&#xA;Bundle-Version: 3.7.200.v20181107-1343
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.core.runtime' version='3.15.100.v20181107-1343' generation='2'>
+      <update id='org.eclipse.core.runtime' range='[0.0.0,3.15.100.v20181107-1343)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='Core Runtime'/>
+        <property name='df_LT.providerName' value='Eclipse.org'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.core'/>
+        <property name='maven-artifactId' value='org.eclipse.core.runtime'/>
+        <property name='maven-version' value='3.15.100-SNAPSHOT'/>
+      </properties>
+      <provides size='8'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.runtime' version='3.15.100.v20181107-1343'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.core.runtime' version='3.15.100.v20181107-1343'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.preferences.legacy' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.runtime' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime' version='3.5.0'/>
+        <provided namespace='osgi.identity' name='org.eclipse.core.runtime' version='3.15.100.v20181107-1343'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='9'>
+        <required namespace='osgi.bundle' name='javax.inject' range='1.0.0' optional='true' greedy='false'/>
+        <required namespace='osgi.bundle' name='org.eclipse.osgi' range='[3.13.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='[3.10.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.jobs' range='[3.10.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.registry' range='[3.8.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.preferences' range='[3.7.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.contenttype' range='[3.7.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.app' range='1.3.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.core.runtime' version='3.15.100.v20181107-1343'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.core.runtime; singleton:=true&#xA;Bundle-Version: 3.15.100.v20181107-1343
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1' generation='2'>
+      <update id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[0.0.0,4.7.1)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.macosx.cocoa.x86_64'/>
+        <property name='maven-version' value='4.7.1'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'>
+          <properties size='1'>
+            <property name='type' value='osgi.fragment'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.7.1'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.7.1'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true&#xA;Bundle-Version: 4.7.1&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.7.1&quot;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.equinox.registry' version='3.8.200.v20181008-1820' generation='2'>
+      <update id='org.eclipse.equinox.registry' range='[0.0.0,3.8.200.v20181008-1820)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='Extension Registry Support'/>
+        <property name='df_LT.providerName' value='Eclipse.org - Equinox'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.equinox'/>
+        <property name='maven-artifactId' value='org.eclipse.equinox.registry'/>
+        <property name='maven-version' value='3.8.200-SNAPSHOT'/>
+      </properties>
+      <provides size='12'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.equinox.registry' version='3.8.200.v20181008-1820'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.equinox.registry' version='3.8.200.v20181008-1820'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.adapter' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.registry' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.registry.osgi' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.registry.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime' version='3.5.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime.dynamichelpers' version='3.4.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime.spi' version='3.4.0'/>
+        <provided namespace='osgi.identity' name='org.eclipse.equinox.registry' version='3.8.200.v20181008-1820'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='17'>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='[3.7.0,4.0.0)'/>
+        <required namespace='java.package' name='javax.xml.parsers' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.core.runtime.jobs' range='0.0.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.eclipse.osgi.framework.console' range='0.0.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.datalocation' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.debug' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.environment' range='0.0.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.localization' range='1.1.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.resolver' range='0.0.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.eclipse.osgi.storagemanager' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.util' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.framework' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.service.packageadmin' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.util.tracker' range='0.0.0'/>
+        <required namespace='java.package' name='org.xml.sax' range='0.0.0'/>
+        <required namespace='java.package' name='org.xml.sax.helpers' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.equinox.registry' version='3.8.200.v20181008-1820'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.equinox.registry;singleton:=true&#xA;Bundle-Version: 3.8.200.v20181008-1820
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.7.1' generation='2'>
+      <update id='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[0.0.0,4.7.1)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.linux.gtk.x86_64'/>
+        <property name='maven-version' value='4.7.1'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.7.1'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.7.1'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.7.1'>
+          <properties size='1'>
+            <property name='type' value='osgi.fragment'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.7.1'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.7.1'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86_64)(osgi.os=linux)(osgi.ws=gtk))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.7.1'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.linux.gtk.x86_64;singleton:=true&#xA;Bundle-Version: 4.7.1&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.7.1&quot;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.osgi' version='3.13.200.v20181130-2106' generation='2'>
+      <update id='org.eclipse.osgi' range='[0.0.0,3.13.200.v20181130-2106)' severity='0'/>
+      <properties size='10'>
+        <property name='df_LT.eclipse.org' value='Eclipse.org - Equinox'/>
+        <property name='df_LT.systemBundle' value='OSGi System Bundle'/>
+        <property name='org.eclipse.equinox.p2.name' value='%systemBundle'/>
+        <property name='org.eclipse.equinox.p2.description' value='%systemBundle'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%eclipse.org'/>
+        <property name='org.eclipse.equinox.p2.doc.url' value='http://www.eclipse.org'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='systembundle'/>
+        <property name='maven-groupId' value='org.eclipse.osgi'/>
+        <property name='maven-artifactId' value='org.eclipse.osgi'/>
+        <property name='maven-version' value='3.13.200-SNAPSHOT'/>
+      </properties>
+      <provides size='92'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.osgi' version='3.13.200.v20181130-2106'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.osgi' version='3.13.200.v20181130-2106'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime.adaptor' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime.internal.adaptor' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.equinox.log' version='1.1.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.container' version='1.3.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.container.builders' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.container.namespaces' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.framework.console' version='1.1.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.framework.eventmgr' version='1.2.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.framework.internal.reliablefile' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.framework.log' version='1.1.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.framework.util' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.debug' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.framework' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.hookregistry' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.loader' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.loader.buddy' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.loader.classpath' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.loader.sources' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.location' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.messages' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.provisional.service.security' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.provisional.verifier' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.service.security' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.serviceregistry' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.signedcontent' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.internal.url' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.launch' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.report.resolution' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.datalocation' version='1.3.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.debug' version='1.2.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.environment' version='1.3.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.localization' version='1.1.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.pluginconversion' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.resolver' version='1.6.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.runnable' version='1.1.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.security' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.service.urlconversion' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.signedcontent' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.storage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.storage.bundlefile' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.storage.url.reference' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.storagemanager' version='1.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.osgi.util' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.dto' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.framework' version='1.9.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.dto' version='1.8.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.hooks.bundle' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.hooks.resolver' version='1.0.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.hooks.service' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.hooks.weaving' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.launch' version='1.2.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.namespace' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.startlevel' version='1.0.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.startlevel.dto' version='1.0.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.wiring' version='1.2.0'/>
+        <provided namespace='java.package' name='org.osgi.framework.wiring.dto' version='1.3.0'/>
+        <provided namespace='java.package' name='org.osgi.resource' version='1.0.0'/>
+        <provided namespace='java.package' name='org.osgi.resource.dto' version='1.0.0'/>
+        <provided namespace='java.package' name='org.osgi.service.condpermadmin' version='1.1.1'/>
+        <provided namespace='java.package' name='org.osgi.service.log' version='1.4.0'/>
+        <provided namespace='java.package' name='org.osgi.service.log.admin' version='1.0.0'/>
+        <provided namespace='java.package' name='org.osgi.service.packageadmin' version='1.2.0'/>
+        <provided namespace='java.package' name='org.osgi.service.permissionadmin' version='1.2.0'/>
+        <provided namespace='java.package' name='org.osgi.service.resolver' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.service.startlevel' version='1.1.0'/>
+        <provided namespace='java.package' name='org.osgi.service.url' version='1.0.0'/>
+        <provided namespace='java.package' name='org.osgi.util.tracker' version='1.5.2'/>
+        <provided namespace='osgi.identity' name='org.eclipse.osgi' version='3.13.200.v20181130-2106'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-1' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.log.LogReaderService,org.eclipse.equinox.log.ExtendedLogReaderService' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-2' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.log.LoggerFactory,org.osgi.service.log.LogService,org.eclipse.equinox.log.ExtendedLogService' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-3' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.log.admin.LoggerAdmin' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-4' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.eclipse.osgi.framework.log.FrameworkLog' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-5' version='0.0.0'>
+          <properties size='2'>
+            <property name='objectClass' value='org.eclipse.osgi.service.datalocation.Location' type='List'/>
+            <property name='type' value='osgi.user.area'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-6' version='0.0.0'>
+          <properties size='2'>
+            <property name='objectClass' value='org.eclipse.osgi.service.datalocation.Location' type='List'/>
+            <property name='type' value='osgi.instance.area'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-7' version='0.0.0'>
+          <properties size='2'>
+            <property name='objectClass' value='org.eclipse.osgi.service.datalocation.Location' type='List'/>
+            <property name='type' value='osgi.configuration.area'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-8' version='0.0.0'>
+          <properties size='2'>
+            <property name='objectClass' value='org.eclipse.osgi.service.datalocation.Location' type='List'/>
+            <property name='type' value='osgi.install.area'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-9' version='0.0.0'>
+          <properties size='2'>
+            <property name='objectClass' value='org.eclipse.osgi.service.datalocation.Location' type='List'/>
+            <property name='type' value='eclipse.home.location'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-10' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.eclipse.osgi.service.environment.EnvironmentInfo' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-11' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.packageadmin.PackageAdmin' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-12' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.startlevel.StartLevel' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-13' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.permissionadmin.PermissionAdmin' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-14' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.condpermadmin.ConditionalPermissionAdmin' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-15' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.osgi.service.resolver.Resolver' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-16' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.eclipse.osgi.service.debug.DebugOptions' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-17' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.eclipse.osgi.service.urlconversion.URLConverter' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-18' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.eclipse.osgi.service.localization.BundleLocalization' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-19' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.eclipse.osgi.service.security.TrustEngine' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='osgi.service' name='org.eclipse.osgi_3.13.200.v20181130-2106-20' version='0.0.0'>
+          <properties size='1'>
+            <property name='objectClass' value='org.eclipse.osgi.signedcontent.SignedContentFactory' type='List'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='1'>
+        <requiredProperties namespace='osgi.ee' match='(|(&amp;(osgi.ee=JavaSE)(version=1.7))(&amp;(osgi.ee=JavaSE/compact1)(version=1.8)))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.osgi' version='3.13.200.v20181130-2106'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.osgi; singleton:=true&#xA;Bundle-Version: 3.13.200.v20181130-2106
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.equinox.common' version='3.10.200.v20181021-1645' generation='2'>
+      <update id='org.eclipse.equinox.common' range='[0.0.0,3.10.200.v20181021-1645)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='Common Eclipse Runtime'/>
+        <property name='df_LT.providerName' value='Eclipse.org - Equinox'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.equinox'/>
+        <property name='maven-artifactId' value='org.eclipse.equinox.common'/>
+        <property name='maven-version' value='3.10.200-SNAPSHOT'/>
+      </properties>
+      <provides size='9'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.equinox.common' version='3.10.200.v20181021-1645'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.equinox.common' version='3.10.200.v20181021-1645'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.boot' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.runtime' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime' version='3.5.0'/>
+        <provided namespace='java.package' name='org.eclipse.equinox.events' version='1.0.0'/>
+        <provided namespace='osgi.identity' name='org.eclipse.equinox.common' version='3.10.200.v20181021-1645'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='13'>
+        <required namespace='java.package' name='org.eclipse.equinox.log' range='[1.0.0,2.0.0)'/>
+        <required namespace='java.package' name='org.eclipse.osgi.framework.log' range='[1.1.0,2.0.0)'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.datalocation' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.debug' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.localization' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.urlconversion' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.util' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.framework' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.service.log' range='[1.3.0,2.0.0)'/>
+        <required namespace='java.package' name='org.osgi.service.packageadmin' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.service.url' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.util.tracker' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.equinox.common' version='3.10.200.v20181021-1645'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.equinox.common; singleton:=true&#xA;Bundle-Version: 3.10.200.v20181021-1645
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.core.jobs' version='3.10.200.v20180912-1356' generation='2'>
+      <update id='org.eclipse.core.jobs' range='[0.0.0,3.10.200.v20180912-1356)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='Eclipse Jobs Mechanism'/>
+        <property name='df_LT.providerName' value='Eclipse.org'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.core'/>
+        <property name='maven-artifactId' value='org.eclipse.core.jobs'/>
+        <property name='maven-version' value='3.10.200-SNAPSHOT'/>
+      </properties>
+      <provides size='7'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.jobs' version='3.10.200.v20180912-1356'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.core.jobs' version='3.10.200.v20180912-1356'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.jobs' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime.jobs' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='org.eclipse.core.jobs' version='3.10.200.v20180912-1356'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='7'>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='[3.8.0,4.0.0)'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.debug' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.util' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.framework' range='1.3.0'/>
+        <required namespace='java.package' name='org.osgi.service.packageadmin' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.util.tracker' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.core.jobs' version='3.10.200.v20180912-1356'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.core.jobs; singleton:=true&#xA;Bundle-Version: 3.10.200.v20180912-1356
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.equinox.app' version='1.4.0.v20181009-1752' generation='2'>
+      <update id='org.eclipse.equinox.app' range='[0.0.0,1.4.0.v20181009-1752)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='Equinox Application Container'/>
+        <property name='df_LT.providerName' value='Eclipse.org - Equinox'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.equinox'/>
+        <property name='maven-artifactId' value='org.eclipse.equinox.app'/>
+        <property name='maven-version' value='1.4.0-SNAPSHOT'/>
+      </properties>
+      <provides size='8'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.equinox.app' version='1.4.0.v20181009-1752'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.equinox.app' version='1.4.0.v20181009-1752'/>
+        <provided namespace='java.package' name='org.eclipse.equinox.app' version='1.1.0'/>
+        <provided namespace='java.package' name='org.eclipse.equinox.internal.app' version='0.0.0'/>
+        <provided namespace='java.package' name='org.osgi.service.application' version='1.1.0'/>
+        <provided namespace='osgi.identity' name='org.eclipse.equinox.app' version='1.4.0.v20181009-1752'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='16'>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.registry' range='[3.4.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='[3.2.0,4.0.0)'/>
+        <required namespace='java.package' name='org.eclipse.osgi.framework.console' range='0.0.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.eclipse.osgi.framework.log' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.datalocation' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.debug' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.environment' range='1.1.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.runnable' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.storagemanager' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.util' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.framework' range='1.3.0'/>
+        <required namespace='java.package' name='org.osgi.service.condpermadmin' range='0.0.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.osgi.service.event' range='1.0.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.osgi.service.packageadmin' range='1.2.0'/>
+        <required namespace='java.package' name='org.osgi.util.tracker' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.7))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.equinox.app' version='1.4.0.v20181009-1752'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.equinox.app; singleton:=true&#xA;Bundle-Version: 1.4.0.v20181009-1752
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.feature.feature.jar' version='4.7.1'>
+      <properties size='7'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
+        <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='https://github.com/smaccm/z3-plugins'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
+        <property name='maven-version' value='4.7.1'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' version='4.7.1'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='com.collins.trustedsystems.z3.feature' version='4.7.1'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='com.collins.trustedsystems.z3.feature' version='4.7.1'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+          Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved. &#xA;MIT License&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;&quot;Software&quot;&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&#xA;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        </license>
+      </licenses>
+      <copyright uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+        Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
+      </copyright>
+    </unit>
+    <unit id='org.eclipse.equinox.preferences' version='3.7.200.v20180827-1235' generation='2'>
+      <update id='org.eclipse.equinox.preferences' range='[0.0.0,3.7.200.v20180827-1235)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='Eclipse Preferences Mechanism'/>
+        <property name='df_LT.providerName' value='Eclipse.org - Equinox'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.equinox'/>
+        <property name='maven-artifactId' value='org.eclipse.equinox.preferences'/>
+        <property name='maven-version' value='3.7.200-SNAPSHOT'/>
+      </properties>
+      <provides size='9'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.equinox.preferences' version='3.7.200.v20180827-1235'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.equinox.preferences' version='3.7.200.v20180827-1235'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.preferences' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.internal.preferences.exchange' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.core.runtime.preferences' version='3.3.0'/>
+        <provided namespace='java.package' name='org.osgi.service.prefs' version='1.1.1'/>
+        <provided namespace='osgi.identity' name='org.eclipse.equinox.preferences' version='3.7.200.v20180827-1235'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='12'>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='[3.2.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.registry' range='[3.2.0,4.0.0)' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.eclipse.osgi.framework.log' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.datalocation' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.debug' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.service.environment' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.osgi.util' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.framework' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.service.packageadmin' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.util.tracker' range='0.0.0'/>
+        <required namespace='java.package' name='org.osgi.service.prefs' range='[1.1.1,1.2.0)'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.equinox.preferences' version='3.7.200.v20180827-1235'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.equinox.preferences; singleton:=true&#xA;Bundle-Version: 3.7.200.v20180827-1235
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='a.jre.javase' version='9.0.0' singleton='false'>
+      <provides size='248'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='a.jre.javase' version='9.0.0'/>
+        <provided namespace='java.package' name='java.applet' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.color' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.datatransfer' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.desktop' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.dnd' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.event' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.font' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.geom' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.im' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.im.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.image' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.image.renderable' version='0.0.0'/>
+        <provided namespace='java.package' name='java.awt.print' version='0.0.0'/>
+        <provided namespace='java.package' name='java.beans' version='0.0.0'/>
+        <provided namespace='java.package' name='java.beans.beancontext' version='0.0.0'/>
+        <provided namespace='java.package' name='java.io' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang.annotation' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang.instrument' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang.invoke' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang.management' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang.module' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang.ref' version='0.0.0'/>
+        <provided namespace='java.package' name='java.lang.reflect' version='0.0.0'/>
+        <provided namespace='java.package' name='java.math' version='0.0.0'/>
+        <provided namespace='java.package' name='java.net' version='0.0.0'/>
+        <provided namespace='java.package' name='java.net.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio.channels' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio.channels.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio.charset' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio.charset.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio.file' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio.file.attribute' version='0.0.0'/>
+        <provided namespace='java.package' name='java.nio.file.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.rmi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.rmi.activation' version='0.0.0'/>
+        <provided namespace='java.package' name='java.rmi.dgc' version='0.0.0'/>
+        <provided namespace='java.package' name='java.rmi.registry' version='0.0.0'/>
+        <provided namespace='java.package' name='java.rmi.server' version='0.0.0'/>
+        <provided namespace='java.package' name='java.security' version='0.0.0'/>
+        <provided namespace='java.package' name='java.security.acl' version='0.0.0'/>
+        <provided namespace='java.package' name='java.security.cert' version='0.0.0'/>
+        <provided namespace='java.package' name='java.security.interfaces' version='0.0.0'/>
+        <provided namespace='java.package' name='java.security.spec' version='0.0.0'/>
+        <provided namespace='java.package' name='java.sql' version='0.0.0'/>
+        <provided namespace='java.package' name='java.text' version='0.0.0'/>
+        <provided namespace='java.package' name='java.text.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.time' version='0.0.0'/>
+        <provided namespace='java.package' name='java.time.chrono' version='0.0.0'/>
+        <provided namespace='java.package' name='java.time.format' version='0.0.0'/>
+        <provided namespace='java.package' name='java.time.temporal' version='0.0.0'/>
+        <provided namespace='java.package' name='java.time.zone' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.concurrent' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.concurrent.atomic' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.concurrent.locks' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.function' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.jar' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.logging' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.prefs' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.regex' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.stream' version='0.0.0'/>
+        <provided namespace='java.package' name='java.util.zip' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.accessibility' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.activation' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.activity' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.annotation' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.annotation.processing' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.crypto' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.crypto.interfaces' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.crypto.spec' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.imageio' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.imageio.event' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.imageio.metadata' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.imageio.plugins.bmp' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.imageio.plugins.jpeg' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.imageio.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.imageio.stream' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.jws' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.jws.soap' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.lang.model' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.lang.model.element' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.lang.model.type' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.lang.model.util' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.loading' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.modelmbean' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.monitor' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.openmbean' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.relation' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.remote' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.remote.rmi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.management.timer' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.naming' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.naming.directory' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.naming.event' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.naming.ldap' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.naming.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.net' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.net.ssl' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.print' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.print.attribute' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.print.attribute.standard' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.print.event' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.rmi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.rmi.CORBA' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.rmi.ssl' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.script' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.auth' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.auth.callback' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.auth.kerberos' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.auth.login' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.auth.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.auth.x500' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.cert' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.security.sasl' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sound.midi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sound.midi.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sound.sampled' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sound.sampled.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sql' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sql.rowset' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sql.rowset.serial' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.sql.rowset.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.border' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.colorchooser' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.event' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.filechooser' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.plaf' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.plaf.basic' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.plaf.metal' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.plaf.multi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.plaf.nimbus' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.plaf.synth' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.table' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.text' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.text.html' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.text.html.parser' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.text.rtf' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.tree' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.swing.undo' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.tools' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.transaction' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.transaction.xa' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.bind' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.bind.annotation' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.bind.annotation.adapters' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.bind.attachment' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.bind.helpers' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.bind.util' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.crypto' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.crypto.dom' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.crypto.dsig' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.crypto.dsig.dom' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.crypto.dsig.keyinfo' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.crypto.dsig.spec' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.datatype' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.namespace' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.parsers' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.soap' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.stream' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.stream.events' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.stream.util' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.transform' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.transform.dom' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.transform.sax' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.transform.stax' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.transform.stream' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.validation' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws.handler' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws.handler.soap' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws.http' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws.soap' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws.spi' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws.spi.http' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.ws.wsaddressing' version='0.0.0'/>
+        <provided namespace='java.package' name='javax.xml.xpath' version='0.0.0'/>
+        <provided namespace='java.package' name='org.ietf.jgss' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CORBA' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CORBA_2_3' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CORBA_2_3.portable' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CORBA.DynAnyPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CORBA.ORBPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CORBA.portable' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CORBA.TypeCodePackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CosNaming' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CosNaming.NamingContextExtPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.CosNaming.NamingContextPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.Dynamic' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.DynamicAny' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.DynamicAny.DynAnyFactoryPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.DynamicAny.DynAnyPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.IOP' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.IOP.CodecFactoryPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.IOP.CodecPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.Messaging' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableInterceptor' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableInterceptor.ORBInitInfoPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableServer' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableServer.CurrentPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableServer.POAManagerPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableServer.POAPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableServer.portable' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.PortableServer.ServantLocatorPackage' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.SendingContext' version='0.0.0'/>
+        <provided namespace='java.package' name='org.omg.stub.java.rmi' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.bootstrap' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.css' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.events' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.html' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.ls' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.ranges' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.stylesheets' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.traversal' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.views' version='0.0.0'/>
+        <provided namespace='java.package' name='org.w3c.dom.xpath' version='0.0.0'/>
+        <provided namespace='java.package' name='org.xml.sax' version='0.0.0'/>
+        <provided namespace='java.package' name='org.xml.sax.ext' version='0.0.0'/>
+        <provided namespace='java.package' name='org.xml.sax.helpers' version='0.0.0'/>
+        <provided namespace='osgi.ee' name='OSGi/Minimum' version='1.0.0'/>
+        <provided namespace='osgi.ee' name='OSGi/Minimum' version='1.1.0'/>
+        <provided namespace='osgi.ee' name='OSGi/Minimum' version='1.2.0'/>
+        <provided namespace='osgi.ee' name='JRE' version='1.0.0'/>
+        <provided namespace='osgi.ee' name='JRE' version='1.1.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.0.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.1.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.2.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.3.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.4.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.5.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.6.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.7.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='1.8.0'/>
+        <provided namespace='osgi.ee' name='JavaSE' version='9.0.0'/>
+        <provided namespace='osgi.ee' name='JavaSE/compact1' version='1.8.0'/>
+        <provided namespace='osgi.ee' name='JavaSE/compact1' version='9.0.0'/>
+        <provided namespace='osgi.ee' name='JavaSE/compact2' version='1.8.0'/>
+        <provided namespace='osgi.ee' name='JavaSE/compact2' version='9.0.0'/>
+        <provided namespace='osgi.ee' name='JavaSE/compact3' version='1.8.0'/>
+        <provided namespace='osgi.ee' name='JavaSE/compact3' version='9.0.0'/>
+      </provides>
+      <touchpoint id='org.eclipse.equinox.p2.native' version='1.0.0'/>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.feature.feature.group' version='4.7.1' singleton='false'>
+      <update id='com.collins.trustedsystems.z3.feature.feature.group' range='[0.0.0,4.7.1)' severity='0'/>
+      <properties size='8'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
+        <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='https://github.com/smaccm/z3-plugins'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
+        <property name='maven-version' value='4.7.1'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.group' version='4.7.1'/>
+      </provides>
+      <requires size='5'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' range='[4.7.1,4.7.1]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[4.7.1,4.7.1]'>
+          <filter>
+            (&amp;(osgi.arch=x86_64)(osgi.os=linux)(osgi.ws=gtk))
+          </filter>
+        </required>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[4.7.1,4.7.1]'>
+          <filter>
+            (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
+          </filter>
+        </required>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[4.7.1,4.7.1]'>
+          <filter>
+            (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
+          </filter>
+        </required>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' range='[4.7.1,4.7.1]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+      <licenses size='1'>
+        <license uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+          Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved. &#xA;MIT License&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;&quot;Software&quot;&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&#xA;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&#xA;THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        </license>
+      </licenses>
+      <copyright uri='https://github.com/Z3Prover/z3' url='https://github.com/Z3Prover/z3'>
+        Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
+      </copyright>
+    </unit>
+    <unit id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.7.1' generation='2'>
+      <update id='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[0.0.0,4.7.1)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
+        <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
+        <property name='maven-artifactId' value='com.collins.trustedsystems.z3.win32.win32.x86_64'/>
+        <property name='maven-version' value='4.7.1'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.7.1'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.7.1'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.7.1'>
+          <properties size='1'>
+            <property name='type' value='osgi.fragment'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.7.1'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.7.1'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
+      </requires>
+      <filter>
+        (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.7.1'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;singleton:=true&#xA;Bundle-Version: 4.7.1&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.7.1&quot;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='config.a.jre.javase' version='9.0.0' singleton='false'>
+      <hostRequirements size='1'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='a.jre.javase' range='9.0.0'/>
+      </hostRequirements>
+      <properties size='1'>
+        <property name='org.eclipse.equinox.p2.type.fragment' value='true'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='config.a.jre.javase' version='9.0.0'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='a.jre.javase' range='9.0.0'/>
+      </requires>
+      <touchpoint id='org.eclipse.equinox.p2.native' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='install'>
+
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+  </units>
+</repository>

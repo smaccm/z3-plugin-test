@@ -8,12 +8,14 @@ repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.rep
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target/type=org.eclipse.tycho.repository.module.ModuleMetadataRepository
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target/uri=file\:/home/kfhoech/git/z3-plugin/com.collins.trustedsystems.z3.repository/target/
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target/version=1.0.0
+repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/description=
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/enabled=true
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/isSystem=false
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/name=com.collins.trustedsystems.z3.repository
+repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/provider=
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/uri=file\:/home/kfhoech/git/z3-plugin/com.collins.trustedsystems.z3.repository/target/repository/
-repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/version=1.0.0
+repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_repository/version=1
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_targetPlatformRepository/enabled=false
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_targetPlatformRepository/isSystem=true
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_targetPlatformRepository/name=TychoTargetPlatform
@@ -21,10 +23,3 @@ repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.rep
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_targetPlatformRepository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_targetPlatformRepository/uri=file\:/home/kfhoech/git/z3-plugin/com.collins.trustedsystems.z3.repository/target/targetPlatformRepository/
 repositories/file\:_home_kfhoech_git_z3-plugin_com.collins.trustedsystems.z3.repository_target_targetPlatformRepository/version=0.0.1
-repositories/https\:__raw.githubusercontent.com_smaccm_z3-plugin-test_master_com.collins.trustedsystems.z3.repository_target_repository/enabled=false
-repositories/https\:__raw.githubusercontent.com_smaccm_z3-plugin-test_master_com.collins.trustedsystems.z3.repository_target_repository/isSystem=true
-repositories/https\:__raw.githubusercontent.com_smaccm_z3-plugin-test_master_com.collins.trustedsystems.z3.repository_target_repository/name=com.collins.trustedsystems.z3.repository
-repositories/https\:__raw.githubusercontent.com_smaccm_z3-plugin-test_master_com.collins.trustedsystems.z3.repository_target_repository/suffix=content.xml
-repositories/https\:__raw.githubusercontent.com_smaccm_z3-plugin-test_master_com.collins.trustedsystems.z3.repository_target_repository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
-repositories/https\:__raw.githubusercontent.com_smaccm_z3-plugin-test_master_com.collins.trustedsystems.z3.repository_target_repository/uri=https\://raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.repository/target/repository/
-repositories/https\:__raw.githubusercontent.com_smaccm_z3-plugin-test_master_com.collins.trustedsystems.z3.repository_target_repository/version=1.0.0

@@ -511,16 +511,16 @@
       </instructions>
     </touchpointData>
   </unit>
-  <unit id='main' version='1.0.0.787A-cLFl36'>
+  <unit id='main' version='1.0.0.787C1cLFl36'>
     <properties size='2'>
       <property name='org.eclipse.equinox.p2.name' value='Z3-Plugin'/>
       <property name='org.eclipse.equinox.p2.type.category' value='true'/>
     </properties>
     <provides size='1'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='main' version='1.0.0.787A-cLFl36'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='main' version='1.0.0.787C1cLFl36'/>
     </provides>
     <requires size='1'>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.group' range='[4.6.0,4.6.0]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.group' range='[4.7.1,4.7.1]'/>
     </requires>
     <touchpoint id='null' version='0.0.0'/>
   </unit>

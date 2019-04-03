@@ -1,40 +1,40 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0' generation='2'>
-    <update id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[0.0.0,4.6.0)' severity='0'/>
+  <unit id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1' generation='2'>
+    <update id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[0.0.0,4.7.1)' severity='0'/>
     <properties size='5'>
       <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
       <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
       <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
       <property name='maven-artifactId' value='com.collins.trustedsystems.z3.macosx.cocoa.x86_64'/>
-      <property name='maven-version' value='4.6.0'/>
+      <property name='maven-version' value='4.7.1'/>
     </properties>
     <provides size='5'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'/>
-      <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'/>
-      <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'/>
+      <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'/>
+      <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'>
         <properties size='1'>
           <property name='type' value='osgi.fragment'/>
         </properties>
       </provided>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.6.0'/>
+      <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.7.1'/>
     </provides>
     <requires size='2'>
-      <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.6.0'/>
+      <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.7.1'/>
       <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
     </requires>
     <filter>
       (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
     </filter>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.6.0'/>
+      <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.7.1'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true&#xA;Bundle-Version: 4.6.0&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.6.0&quot;&#xA;
+          Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true&#xA;Bundle-Version: 4.7.1&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.7.1&quot;&#xA;
         </instruction>
       </instructions>
     </touchpointData>
