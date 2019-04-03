@@ -653,6 +653,14 @@ UPDATES_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4
                     </source>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-p2-repository-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <configuration>
+                    <skipArchive>true</skipArchive>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
