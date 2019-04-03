@@ -646,7 +646,7 @@ UPDATES_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4
                     <destination>${project.build.directory}/repository</destination>
                     <source>
                         <repository>
-                            <url>https://raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.repository/target/repository/</url>
+                            <url>https://raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.updates/target/repository/</url>
                             <layout>p2</layout>
                             <!-- supported layouts are "p2-metadata", "p2-artifacts", and "p2" (for joint repositories; default) -->
                         </repository>
