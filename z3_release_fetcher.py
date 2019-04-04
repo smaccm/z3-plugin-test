@@ -937,7 +937,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
         gitrepo.git.tag(plugin_version)
         gitrepo.git.push('--quiet', '--set-upstream', 'origin-with-token', 'master')
-        gitrepo.git.push('origin-with-tokens', '--tags')
+        gitrepo.git.push('origin-with-token', '--tags')
 
     else:
         sys.stderr.write('Cannot find release description for %s' % (z3_version))
