@@ -933,14 +933,28 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         subprocess.call(['mvn', 'clean', 'verify'])
 
         # Commit/push this repository
-        #gitrepo.git.add('-A')
-        #gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
-        #gitrepo.git.tag(plugin_version)
-        #gitrepo.git.push()
-        #gitrepo.git.push('--tags')
+        gitrepo.git.add('-A')
+        gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
+        gitrepo.git.tag(plugin_version)
+        gitrepo.git.push('--quiet', '--set-upstream', 'origin-with-tokens', 'master')
+        gitrepo.git.push('origin-with-tokens', '--tags')
 
     else:
         sys.stderr.write('Cannot find release description for %s' % (z3_version))
+
+def release_plugin(plugin_version, z3_version, z3_releases):
+    release_spec = { "tag_name": plugin_version,
+                    "target_commitish": "master",
+                    "name": "Z3 Plugin %s" % (plugin_version),
+                    "body": "Eclipse plugin containing binaries for Z3 Prover version %s." % (plugin_version),
+                    "draft": false,
+                    "prerelease": false
+                    }
+    response = requests.post(URL, data=release_spec)
+    asset_upload_url = response['upload_url']
+    with open('com.collins.trustedsystems.z3.repository/target/com.collins.trustedsystems.z3.repoistory_X.X.X.jar', 'rb') as asset_content:
+        asset_response = requests.post(URL, data=asset_content)
+    pass
 
 def main(argv=None): # IGNORE:C0111
     '''Command line options.'''
@@ -1026,6 +1040,7 @@ def main(argv=None): # IGNORE:C0111
 
         for ver in build_order:
             package_plugin(ver, plugin_versions[ver], z3_releases)
+            # release_plugin(ver, plugin_versions[ver], z3_releases)
 
         return 0
     except KeyboardInterrupt:
