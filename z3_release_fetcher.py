@@ -936,7 +936,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         gitrepo.git.add('-A')
         gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
         gitrepo.git.tag(plugin_version)
-        gitrepo.git.push('--quiet', '--set-upstream', 'origin-with-tokens', 'master')
+        gitrepo.git.push('--quiet', '--set-upstream', 'origin-with-token', 'master')
         gitrepo.git.push('origin-with-tokens', '--tags')
 
     else:
