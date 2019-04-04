@@ -1,5 +1,6 @@
 lang: java
 before_install:
+  - sudo apt-get install python3 python3-pip
   - pip3 install --user requests GitPython pyelftools macholib github3.py
   - ./git-setup.sh
 script:
