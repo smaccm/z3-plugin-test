@@ -944,30 +944,18 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
 def release_plugin(plugin_version, z3_version, z3_releases):
     from github3 import GitHub
-    gh = GitHub(url=GITHUB_API, token=os.environ['GH_TOKEN'])
+    gh = GitHub(GITHUB_API, token=os.environ['GH_TOKEN'])
     repository = gh.repository(Z3_PLUGIN_OWNER, Z3_PLUGIN_REPO)
-    release = repository.release(id=plugin_version)
-    release.edit(tag_name=plugin_version,
+    release = repository.create_release(plugin_version,
         target_commitish='master',
         name='Z3 Plugin %s' % (plugin_version),
         body='Eclipse plugin containing binaries for Z3 Prover version %s.' % (plugin_version),
-        draft=false,
-        prerelease=false,
+        draft=False,
+        prerelease=False,
     )
-    filename = '%s_%s.zip' % (REPO_PACKAGE_DIR, plugin_version)
+    filename = '%s-%s.zip' % (REPO_PACKAGE_DIR, plugin_version)
     filepath = os.path.join(REPO_PACKAGE_DIR, 'target', filename)
     asset = release.upload_asset(content_type='application/binary', name=filename, asset=open(filepath, 'rb'))
-#     release_spec = { "tag_name": plugin_version,
-#                     "target_commitish": "master",
-#                     "name": "Z3 Plugin %s" % (plugin_version),
-#                     "body": "Eclipse plugin containing binaries for Z3 Prover version %s." % (plugin_version),
-#                     "draft": false,
-#                     "prerelease": false
-#                     }
-#     response = requests.post(URL, data=release_spec)
-#     asset_upload_url = response['upload_url']
-#     with open('com.collins.trustedsystems.z3.repository/target/com.collins.trustedsystems.z3.repoistory_X.X.X.jar', 'rb') as asset_content:
-#         asset_response = requests.post(URL, data=asset_content)
 
 def main(argv=None): # IGNORE:C0111
     '''Command line options.'''
@@ -1053,7 +1041,7 @@ def main(argv=None): # IGNORE:C0111
 
         for ver in build_order:
             package_plugin(ver, plugin_versions[ver], z3_releases)
-            # release_plugin(ver, plugin_versions[ver], z3_releases)
+            release_plugin(ver, plugin_versions[ver], z3_releases)
 
         return 0
     except KeyboardInterrupt:
