@@ -15,7 +15,6 @@ Also, versions already packaged are skipped as well.
 
 import os
 import re
-import requests
 import subprocess
 import sys
 import tempfile
@@ -23,6 +22,7 @@ import tempfile
 from argparse import ArgumentParser
 from argparse import RawDescriptionHelpFormatter
 from git import Repo
+from github3 import GitHub
 from macholib.MachOGraph import MachOGraph
 from pprint import pprint, pformat
 from shutil import copyfile
@@ -744,7 +744,7 @@ __version__ = 0.1
 __date__ = '2019-03-29'
 __updated__ = '2019-03-29'
 
-AUTH_TOKEN = ('%s@' % (os.environ['GH_TOKEN'])) if 'GH_TOKEN' in os.environ.keys() else ''
+AUTH_TOKEN = os.environ['GH_TOKEN'] if 'GH_TOKEN' in os.environ.keys() else None
 
 BASE_PACKAGE = 'com.collins.trustedsystems.z3'
 SOURCE_DIR = BASE_PACKAGE
@@ -758,7 +758,7 @@ TARGET_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'target'])
 
 DEBUG = 1
 
-GITHUB_API = 'https://%sapi.github.com/repos' % (AUTH_TOKEN)
+GITHUB_API = 'https://api.github.com/repos'
 GITHUB_RELEASES = 'releases'
 
 Z3_PROVER_OWNER = 'Z3Prover'
@@ -782,21 +782,16 @@ class CLIError(Exception):
 def package_plugin(plugin_version, z3_version, z3_releases):
     '''Package a plugin from the exectuables for the corresponding release'''
 
-    def get_binary_filename(release_binary_urls, substr):
-        binary_filename = None
-        filename_iter = filter(lambda n: substr in n, release_binary_urls.keys())
-        for binary_filename in filename_iter:
+    def get_asset(release_assets_by_name, substr):
+        asset = None
+        filename_iter = filter(lambda n: substr in n, release_assets_by_name.keys())
+        for asset in filename_iter:
             pass
-        return binary_filename
+        return release_assets_by_name[asset]
 
-    def extract_binaries(binaries_dir, binary_filename):
-        print('  Downloading binary package %s ...' % (binary_filename))
-        response = requests.get(release_binary_urls[binary_filename], stream=True)
-        response.raise_for_status()
-        zipfilename = os.path.join(binaries_dir, binary_filename)
-        with open(zipfilename, 'wb') as handle:
-            for block in response.iter_content(1024):
-                handle.write(block)
+    def extract_binaries(binaries_dir, asset):
+        print('  Downloading binary package %s ...' % (asset.name))
+        zipfilename = asset.download(os.path.join(binaries_dir, asset.name))
         print('  Download complete.  Extracting...')
         if not os.path.exists(binaries_dir):
             os.makedirs(binaries_dir)
@@ -859,13 +854,13 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         z3_exec = next(iter([os.path.join(d,f) for d,_,files in os.walk(rootdir) for f in files if f == 'z3.exe']), None)
         return [x for x in get_deps_win32_rec(z3_exec)]
 
-    release_description = next(filter(lambda desc: desc['tag_name'] == z3_version, z3_releases), None)
+    release_description = next(filter(lambda r: r.tag_name == z3_version, z3_releases), None)
     if release_description:
         print('Building plugin version %s for Z3 version %s...' % (plugin_version,z3_version))
 
         gitrepo = Repo(os.getcwd())
 
-        release_binary_urls = {x['name'] : x['browser_download_url'] for x in release_description['assets']}
+        release_assets_by_name = {x.name : x for x in release_description.assets()}
 
         with open('pom.xml', 'w') as text_file:
             text_file.write(POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
@@ -898,13 +893,13 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
             binaries_dir = os.path.join(LINUX_PACKAGE_DIR, 'binaries')
-            binary_filename = get_binary_filename(release_binary_urls, 'x64-ubuntu')
+            asset = get_asset(release_assets_by_name, 'x64-ubuntu')
             try:
                 gitrepo.git.rm('-r', binaries_dir)
             except Exception as e:
                 sys.stderr.write(str(e))
             print('  Previous binaries directory removed from git.')
-            extract_binaries(temp_dir, binary_filename)
+            extract_binaries(temp_dir, asset)
             z3_deps = get_deps_linux(temp_dir)
             print('  Required (deps) files: %s' % (pformat(z3_deps)))
             if not os.path.exists(binaries_dir):
@@ -926,13 +921,13 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
             binaries_dir = os.path.join(MACOS_PACKAGE_DIR, 'binaries')
-            binary_filename = get_binary_filename(release_binary_urls, 'x64-osx')
+            asset = get_asset(release_assets_by_name, 'x64-osx')
             try:
                 gitrepo.git.rm('-r', binaries_dir)
             except Exception as e:
                 sys.stderr.write(str(e))
             print('  Previous binaries directory removed from git.')
-            extract_binaries(temp_dir, binary_filename)
+            extract_binaries(temp_dir, asset)
             z3_deps = get_deps_osx(temp_dir)
             print('  Required (deps) files: %s' % (pformat(z3_deps)))
             if not os.path.exists(binaries_dir):
@@ -954,13 +949,13 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
             binaries_dir = os.path.join(WIN32_PACKAGE_DIR, 'binaries')
-            binary_filename = get_binary_filename(release_binary_urls, 'x64-win')
+            asset = get_asset(release_assets_by_name, 'x64-win')
             try:
                 gitrepo.git.rm('-r', binaries_dir)
             except Exception as e:
                 sys.stderr.write(str(e))
             print('  Previous binaries directory removed from git.')
-            extract_binaries(temp_dir, binary_filename)
+            extract_binaries(temp_dir, asset)
             z3_deps = get_deps_win32(temp_dir)
             print('  Required (deps) files: %s' % (pformat(z3_deps)))
             if not os.path.exists(binaries_dir):
@@ -1010,9 +1005,8 @@ def package_plugin(plugin_version, z3_version, z3_releases):
     else:
         sys.stderr.write('Cannot find release description for %s' % (z3_version))
 
-def release_plugin(plugin_version, z3_version, z3_releases):
-    from github3 import GitHub
-    gh = GitHub(GITHUB_API, token=os.environ['GH_TOKEN'])
+def release_plugin(plugin_version):
+    gh = GitHub(GITHUB_API, token=AUTH_TOKEN)
     repository = gh.repository(Z3_PLUGIN_OWNER, Z3_PLUGIN_REPO)
     release = repository.create_release(plugin_version,
         target_commitish='master',
@@ -1078,7 +1072,7 @@ def main(argv=None): # IGNORE:C0111
         if verbose and verbose > 0:
             print('Verbose mode on')
 
-        if len(AUTH_TOKEN) > 0:
+        if AUTH_TOKEN:
             print('Using Auth token string ending %s' % (AUTH_TOKEN[-4:]))
         else:
             print('No AUTH_TOKEN, using unauthenticated access')
@@ -1086,22 +1080,13 @@ def main(argv=None): # IGNORE:C0111
         if inpattern and expattern and inpattern == expattern:
             raise CLIError("include and exclude pattern are equal! Nothing will be processed.")
 
-        z3_response = requests.get(Z3_PROVER_REQUEST)
-        if not z3_response.ok:
-            sys.stderr.write("Error fetching Z3 Prover versions: %d" % (z3_response.status_code))
-            sys.stderr.write(z3_response.reason)
-            sys.exit(1)
-        z3_releases = z3_response.json()
-        z3_versions = [rel['tag_name'] for rel in z3_releases]
+        gh = GitHub(GITHUB_API, token=AUTH_TOKEN)
+        prover_repository = gh.repository(Z3_PROVER_OWNER, Z3_PROVER_REPO)
+        z3_releases = [r for r in prover_repository.releases()]
+        z3_versions = [r.tag_name for r in z3_releases]
 
-        extant_plugin_response = requests.get(Z3_PLUGIN_REQUEST)
-        if not extant_plugin_response.ok:
-            sys.stderr.write("Error fetching Plugin versions: %d" % (extant_plugin_response.status_code))
-            sys.stderr.write(extant_plugin_response.reason)
-            sys.exit(1)
-        extant_plugin_releases = extant_plugin_response.json()
-        z3_releases = z3_response.json()
-        extant_plugin_versions = [rel['tag_name'] for rel in extant_plugin_releases]
+        plugin_repository = gh.repository(Z3_PLUGIN_OWNER, Z3_PLUGIN_REPO)
+        extant_plugin_versions = [r.tag_name for r in plugin_repository.releases()]
 
         # filter out the versions matching the exclude pattern
         if expattern:
@@ -1126,7 +1111,7 @@ def main(argv=None): # IGNORE:C0111
         for ver in build_order:
             print('Building plugin version %s ...' % (ver))
             package_plugin(ver, plugin_versions[ver], z3_releases)
-            release_plugin(ver, plugin_versions[ver], z3_releases)
+            release_plugin(ver)
 
         return 0
     except KeyboardInterrupt:
