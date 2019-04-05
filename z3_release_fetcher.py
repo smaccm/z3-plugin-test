@@ -760,7 +760,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         return binary_filename
 
     def extract_binaries(binaries_dir, binary_filename):
-        print('  Downloading binary package %s ...' & (binary_filename))
+        print('  Downloading binary package %s ...' % (binary_filename))
         response = requests.get(release_binary_urls[binary_filename], stream=True)
         response.raise_for_status()
         zipfilename = os.path.join(binaries_dir, binary_filename)
@@ -839,31 +839,31 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
         with open('pom.xml', 'w') as text_file:
             text_file.write(POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' & ('pom.xml'))
+        print('  Generated %s.' % ('pom.xml'))
 
         with open(os.path.join(SOURCE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(SOURCE_POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' & (os.path.join(SOURCE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(SOURCE_DIR, 'pom.xml')))
 
         with open(os.path.join(SOURCE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
             text_file.write(SOURCE_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' & (os.path.join(SOURCE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (os.path.join(SOURCE_DIR, 'META-INF', 'MANIFEST.MF')))
 
         with open(os.path.join(FEATURE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(FEATURE_POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' & (os.path.join(FEATURE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(FEATURE_DIR, 'pom.xml')))
 
         with open(os.path.join(FEATURE_DIR, 'feature.xml'), 'w') as text_file:
             text_file.write(FEATURE_XML_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' & (os.path.join(FEATURE_DIR, 'feature.xml')))
+        print('  Generated %s.' % (os.path.join(FEATURE_DIR, 'feature.xml')))
 
         with open(os.path.join(LINUX_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(BINARY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=LINUX_PACKAGE_DIR, os='linux', ws='gtk', arch='x86_64'))
-        print('  Generated %s.' & (os.path.join(LINUX_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(LINUX_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(LINUX_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
             text_file.write(BINARY_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=LINUX_PACKAGE_DIR, os='linux', ws='gtk', arch='x86_64'))
-        print('  Generated %s.' & (os.path.join(LINUX_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (os.path.join(LINUX_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
 
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -876,7 +876,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
             print('  Previous binaries directory removed from git.')
             extract_binaries(temp_dir, binary_filename)
             z3_deps = get_deps_linux(temp_dir)
-            print('  Required (deps) files: %' & (pformat(z3_deps)))
+            print('  Required (deps) files: %s' % (pformat(z3_deps)))
             if not os.path.exists(binaries_dir):
                 os.makedirs(binaries_dir)
             for dep in z3_deps:
@@ -887,11 +887,11 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
         with open(os.path.join(MACOS_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(BINARY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=MACOS_PACKAGE_DIR, os='macosx', ws='cocoa', arch='x86_64'))
-        print('  Generated %s.' & (os.path.join(MACOS_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(MACOS_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(MACOS_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
             text_file.write(BINARY_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=MACOS_PACKAGE_DIR, os='macosx', ws='cocoa', arch='x86_64'))
-        print('  Generated %s.' & (os.path.join(MACOS_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (os.path.join(MACOS_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
 
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -904,7 +904,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
             print('  Previous binaries directory removed from git.')
             extract_binaries(temp_dir, binary_filename)
             z3_deps = get_deps_osx(temp_dir)
-            print('  Required (deps) files: %' & (pformat(z3_deps)))
+            print('  Required (deps) files: %s' % (pformat(z3_deps)))
             if not os.path.exists(binaries_dir):
                 os.makedirs(binaries_dir)
             for dep in z3_deps:
@@ -915,11 +915,11 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
         with open(os.path.join(WIN32_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(BINARY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=WIN32_PACKAGE_DIR, os='win32', ws='win32', arch='x86_64'))
-        print('  Generated %s.' & (os.path.join(WIN32_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(WIN32_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(WIN32_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
             text_file.write(BINARY_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=WIN32_PACKAGE_DIR, os='win32', ws='win32', arch='x86_64'))
-        print('  Generated %s.' & (os.path.join(WIN32_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (os.path.join(WIN32_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
 
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -932,7 +932,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
             print('  Previous binaries directory removed from git.')
             extract_binaries(temp_dir, binary_filename)
             z3_deps = get_deps_win32(temp_dir)
-            print('  Required (deps) files: %' & (pformat(z3_deps)))
+            print('  Required (deps) files: %s' % (pformat(z3_deps)))
             if not os.path.exists(binaries_dir):
                 os.makedirs(binaries_dir)
             for dep in z3_deps:
@@ -943,24 +943,24 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
         with open(os.path.join(TARGET_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(TARGET_POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' & (os.path.join(TARGET_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(TARGET_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(REPO_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(REPOSITORY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' & (os.path.join(REPO_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(REPO_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(REPO_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
             text_file.write(REPOSITORY_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' & (os.path.join(REPO_PACKAGE_DIR, 'category.xml')))
+        print('  Generated %s.' % (os.path.join(REPO_PACKAGE_DIR, 'category.xml')))
 
         with open(os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
             text_file.write(UPDATES_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' & (os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(UPDATES_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
             text_file.write(UPDATES_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' & (os.path.join(UPDATES_PACKAGE_DIR, 'category.xml')))
-
+        print('  Generated %s.' % (os.path.join(UPDATES_PACKAGE_DIR, 'category.xml')))
+        sys.exit(0)
         # Launch maven to build repository
         subprocess.call(['mvn', 'clean', 'verify'])
 
@@ -1053,14 +1053,14 @@ def main(argv=None): # IGNORE:C0111
 
         z3_response = requests.get(Z3_PROVER_REQUEST)
         if not z3_response.ok:
-            sys.stderr.write("Error fetching Z3 Prover versions: %d" & (z3_response.status_code))
+            sys.stderr.write("Error fetching Z3 Prover versions: %d" % (z3_response.status_code))
             sys.stderr.write(z3_response.reason)
         z3_releases = z3_response.json()
         z3_versions = [rel['tag_name'] for rel in z3_releases]
 
         extant_plugin_response = requests.get(Z3_PLUGIN_REQUEST)
         if not extant_plugin_response.ok:
-            sys.stderr.write("Error fetching Plugin versions: %d" & (extant_plugin_response.status_code))
+            sys.stderr.write("Error fetching Plugin versions: %d" % (extant_plugin_response.status_code))
             sys.stderr.write(extant_plugin_response.reason)
         extant_plugin_releases = extant_plugin_response.json()
         z3_releases = z3_response.json()
@@ -1087,7 +1087,7 @@ def main(argv=None): # IGNORE:C0111
         print('Building plugin versions: %s' % (pformat(build_order)))
 
         for ver in build_order:
-            print('Building plugin version %s ...' & (ver))
+            print('Building plugin version %s ...' % (ver))
             package_plugin(ver, plugin_versions[ver], z3_releases)
             release_plugin(ver, plugin_versions[ver], z3_releases)
 
