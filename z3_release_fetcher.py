@@ -960,7 +960,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         with open(os.path.join(UPDATES_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
             text_file.write(UPDATES_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
         print('  Generated %s.' % (os.path.join(UPDATES_PACKAGE_DIR, 'category.xml')))
-        sys.exit(0)
+
         # Launch maven to build repository
         subprocess.call(['mvn', 'clean', 'verify'])
 
