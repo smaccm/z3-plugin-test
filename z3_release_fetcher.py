@@ -1076,7 +1076,12 @@ def main(argv=None): # IGNORE:C0111
         expattern = args.exclude
 
         if verbose and verbose > 0:
-            print("Verbose mode on")
+            print('Verbose mode on')
+
+        if len(AUTH_TOKEN) > 0:
+            print('Using Auth token string ending %s' % (AUTH_TOKEN[-4:]))
+        else:
+            print('No AUTH_TOKEN, using unauthenticated access')
 
         if inpattern and expattern and inpattern == expattern:
             raise CLIError("include and exclude pattern are equal! Nothing will be processed.")
@@ -1085,6 +1090,7 @@ def main(argv=None): # IGNORE:C0111
         if not z3_response.ok:
             sys.stderr.write("Error fetching Z3 Prover versions: %d" % (z3_response.status_code))
             sys.stderr.write(z3_response.reason)
+            sys.exit(1)
         z3_releases = z3_response.json()
         z3_versions = [rel['tag_name'] for rel in z3_releases]
 
@@ -1092,6 +1098,7 @@ def main(argv=None): # IGNORE:C0111
         if not extant_plugin_response.ok:
             sys.stderr.write("Error fetching Plugin versions: %d" % (extant_plugin_response.status_code))
             sys.stderr.write(extant_plugin_response.reason)
+            sys.exit(1)
         extant_plugin_releases = extant_plugin_response.json()
         z3_releases = z3_response.json()
         extant_plugin_versions = [rel['tag_name'] for rel in extant_plugin_releases]
