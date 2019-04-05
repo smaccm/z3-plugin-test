@@ -1,8 +1,14 @@
+sudo: false
+dist: xenial
 lang: java
+addons:
+  apt:
+    packages:
+      - "python3"
+      - "python3-pip"
 before_install:
-  - sudo apt-get install python3 python3-pip
   - pip3 install --user --upgrade setuptools
-  - pip3 install --user requests GitPython pyelftools macholib github3.py
+  - pip3 install --user GitPython macholib github3.py
   - ./git-setup.sh
 script:
   - python3 z3_release_fetcher.py -v -i z3-\\d+\\.\\d+\\.\\d+ -e z3-\(\([123]\\.\\d+\\.\\d+\)\|\(4\\.[1234]\\.\\d+\)\)
