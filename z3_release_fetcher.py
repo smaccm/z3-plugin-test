@@ -646,7 +646,7 @@ UPDATES_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4
                     <destination>${project.build.directory}/repository</destination>
                     <source>
                         <repository>
-                            <url>https://raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.updates/target/repository/</url>
+                            <url>https://${auth_token}raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.updates/target/repository/</url>
                             <layout>p2</layout>
                             <!-- supported layouts are "p2-metadata", "p2-artifacts", and "p2" (for joint repositories; default) -->
                         </repository>
@@ -716,6 +716,8 @@ __version__ = 0.1
 __date__ = '2019-03-29'
 __updated__ = '2019-03-29'
 
+AUTH_TOKEN = ('%s@' % (os.environ['GH_TOKEN'])) if 'GH_TOKEN' in os.environ.keys() else ''
+
 BASE_PACKAGE = 'com.collins.trustedsystems.z3'
 SOURCE_DIR = BASE_PACKAGE
 FEATURE_DIR = '.'.join([BASE_PACKAGE, 'feature'])
@@ -728,7 +730,7 @@ TARGET_PACKAGE_DIR = '.'.join([BASE_PACKAGE, 'target'])
 
 DEBUG = 1
 
-GITHUB_API = 'https://api.github.com/repos'
+GITHUB_API = 'https://%sapi.github.com/repos' % (AUTH_TOKEN)
 GITHUB_RELEASES = 'releases'
 
 Z3_PROVER_OWNER = 'Z3Prover'
@@ -954,7 +956,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         print('  Generated %s.' % (os.path.join(REPO_PACKAGE_DIR, 'category.xml')))
 
         with open(os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
-            text_file.write(UPDATES_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
+            text_file.write(UPDATES_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, auth_token=AUTH_TOKEN))
         print('  Generated %s.' % (os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(UPDATES_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
