@@ -646,7 +646,7 @@ UPDATES_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4
                     <destination>${project.build.directory}/repository</destination>
                     <source>
                         <repository>
-                            <url>https://${auth_token}raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.updates/target/repository/</url>
+                            <url>https://raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.updates/target/repository/</url>
                             <layout>p2</layout>
                             <!-- supported layouts are "p2-metadata", "p2-artifacts", and "p2" (for joint repositories; default) -->
                         </repository>
@@ -956,7 +956,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         print('  Generated %s.' % (os.path.join(REPO_PACKAGE_DIR, 'category.xml')))
 
         with open(os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
-            text_file.write(UPDATES_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, auth_token=AUTH_TOKEN))
+            text_file.write(UPDATES_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
         print('  Generated %s.' % (os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml')))
 
         with open(os.path.join(UPDATES_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
