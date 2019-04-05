@@ -631,27 +631,55 @@ UPDATES_POM_TEMPLATE = Template('''<project xmlns="http://maven.apache.org/POM/4
     <build>
         <plugins>
             <plugin>
-                <groupId>org.eclipse.tycho.extras</groupId>
-                <artifactId>tycho-p2-extras-plugin</artifactId>
-                <version>$${tycho.version}</version>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.4</version>
                 <executions>
                     <execution>
-                        <phase>prepare-package</phase>
+                        <id>save-previous-repository</id>
+                        <phase>pre-clean</phase>
+                        <configuration>
+                            <tasks>
+                                <copy todir="${project.basedir}/prev-repository">
+                                    <fileset dir="${project.build.directory}/repository"
+                                        includes="**/*" />
+                                </copy>
+                            </tasks>
+                        </configuration>
                         <goals>
-                            <goal>mirror</goal>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>restore-repository</id>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <tasks>
+                                <mkdir dir="${project.build.directory}/repository"/>
+                                <copy todir="${project.build.directory}/repository">
+                                    <fileset dir="${project.basedir}/prev-repository"
+                                        includes="**/*" />
+                                </copy>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>remove-prev-repository</id>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <tasks>
+                                <delete includeEmptyDirs="true">
+                                    <fileset dir="${project.basedir}/prev-repository" />
+                                </delete>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <destination>${project.build.directory}/repository</destination>
-                    <source>
-                        <repository>
-                            <url>https://raw.githubusercontent.com/smaccm/z3-plugin-test/master/com.collins.trustedsystems.z3.updates/target/repository/</url>
-                            <layout>p2</layout>
-                            <!-- supported layouts are "p2-metadata", "p2-artifacts", and "p2" (for joint repositories; default) -->
-                        </repository>
-                    </source>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
