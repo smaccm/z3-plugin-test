@@ -862,43 +862,50 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
         release_assets_by_name = {x.name : x for x in release_description.assets()}
 
-        with open('pom.xml', 'w') as text_file:
+        filename = 'pom.xml'
+        with open(filename, 'w') as text_file:
             text_file.write(POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' % ('pom.xml'))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(SOURCE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(SOURCE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(SOURCE_POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' % (os.path.join(SOURCE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(SOURCE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
+        filename = os.path.join(SOURCE_DIR, 'META-INF', 'MANIFEST.MF')
+        with open(filename, 'w') as text_file:
             text_file.write(SOURCE_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' % (os.path.join(SOURCE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(FEATURE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(FEATURE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(FEATURE_POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' % (os.path.join(FEATURE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(FEATURE_DIR, 'feature.xml'), 'w') as text_file:
+        filename = os.path.join(FEATURE_DIR, 'feature.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(FEATURE_XML_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' % (os.path.join(FEATURE_DIR, 'feature.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(LINUX_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(LINUX_PACKAGE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(BINARY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=LINUX_PACKAGE_DIR, os='linux', ws='gtk', arch='x86_64'))
-        print('  Generated %s.' % (os.path.join(LINUX_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(LINUX_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
+        filename = os.path.join(LINUX_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')
+        with open(filename, 'w') as text_file:
             text_file.write(BINARY_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=LINUX_PACKAGE_DIR, os='linux', ws='gtk', arch='x86_64'))
-        print('  Generated %s.' % (os.path.join(LINUX_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (filename))
 
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
             binaries_dir = os.path.join(LINUX_PACKAGE_DIR, 'binaries')
             asset = get_asset(release_assets_by_name, 'x64-ubuntu')
             try:
-                gitrepo.git.rm('-r', binaries_dir)
+                removed_elements = gitrepo.index.remove([binaries_dir], True, r=True)
+                print('  Previous binaries removed from git: %s' % (pformat(removed_elements)))
             except Exception as e:
                 sys.stderr.write(str(e))
-            print('  Previous binaries directory removed from git.')
             extract_binaries(temp_dir, asset)
             z3_deps = get_deps_linux(temp_dir)
             print('  Required (deps) files: %s' % (pformat(z3_deps)))
@@ -907,23 +914,26 @@ def package_plugin(plugin_version, z3_version, z3_releases):
             for dep in z3_deps:
                 copyfile(dep, os.path.join(binaries_dir, os.path.basename(dep)))
             print('  Required files copied.')
-            gitrepo.git.add(binaries_dir)
-            print('  New binaries directory added to git.')
+            #added_elements = gitrepo.index.add([os.path.join(binaries_dir, os.path.basename(dep)) for dep in z3_deps])
+            #print('  New binaries added to git: %s' % (added_elements))
 
-        with open(os.path.join(MACOS_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(MACOS_PACKAGE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(BINARY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=MACOS_PACKAGE_DIR, os='macosx', ws='cocoa', arch='x86_64'))
-        print('  Generated %s.' % (os.path.join(MACOS_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(MACOS_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
+        filename = os.path.join(MACOS_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')
+        with open(filename, 'w') as text_file:
             text_file.write(BINARY_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=MACOS_PACKAGE_DIR, os='macosx', ws='cocoa', arch='x86_64'))
-        print('  Generated %s.' % (os.path.join(MACOS_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (filename))
 
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
             binaries_dir = os.path.join(MACOS_PACKAGE_DIR, 'binaries')
             asset = get_asset(release_assets_by_name, 'x64-osx')
             try:
-                gitrepo.git.rm('-r', binaries_dir)
+                removed_elements = gitrepo.index.remove([binaries_dir], True, r=True)
+                print('  Previous binaries removed from git: %s' % (pformat(removed_elements)))
             except Exception as e:
                 sys.stderr.write(str(e))
             print('  Previous binaries directory removed from git.')
@@ -935,23 +945,24 @@ def package_plugin(plugin_version, z3_version, z3_releases):
             for dep in z3_deps:
                 copyfile(dep, os.path.join(binaries_dir, os.path.basename(dep)))
             print('  Required files copied.')
-            gitrepo.git.add(binaries_dir)
-            print('  New binaries directory added to git.')
 
-        with open(os.path.join(WIN32_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(WIN32_PACKAGE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(BINARY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=WIN32_PACKAGE_DIR, os='win32', ws='win32', arch='x86_64'))
-        print('  Generated %s.' % (os.path.join(WIN32_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(WIN32_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF'), 'w') as text_file:
+        filename = os.path.join(WIN32_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')
+        with open(filename, 'w') as text_file:
             text_file.write(BINARY_MANIFEST_TEMPLATE.safe_substitute(plugin_version=plugin_version, artifact_id=WIN32_PACKAGE_DIR, os='win32', ws='win32', arch='x86_64'))
-        print('  Generated %s.' % (os.path.join(WIN32_PACKAGE_DIR, 'META-INF', 'MANIFEST.MF')))
+        print('  Generated %s.' % (filename))
 
         # Download and unpack binaries into binaries dir
         with tempfile.TemporaryDirectory() as temp_dir:
             binaries_dir = os.path.join(WIN32_PACKAGE_DIR, 'binaries')
             asset = get_asset(release_assets_by_name, 'x64-win')
             try:
-                gitrepo.git.rm('-r', binaries_dir)
+                removed_elements = gitrepo.index.remove([binaries_dir], True, r=True)
+                print('  Previous binaries removed from git: %s' % (pformat(removed_elements)))
             except Exception as e:
                 sys.stderr.write(str(e))
             print('  Previous binaries directory removed from git.')
@@ -963,44 +974,71 @@ def package_plugin(plugin_version, z3_version, z3_releases):
             for dep in z3_deps:
                 copyfile(dep, os.path.join(binaries_dir, os.path.basename(dep)))
             print('  Required files copied.')
-            gitrepo.git.add(binaries_dir)
-            print('  New binaries directory added to git.')
 
-        with open(os.path.join(TARGET_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(TARGET_PACKAGE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(TARGET_POM_TEMPLATE.safe_substitute(plugin_version = plugin_version))
-        print('  Generated %s.' % (os.path.join(TARGET_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(REPO_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(REPO_PACKAGE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(REPOSITORY_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' % (os.path.join(REPO_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(REPO_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
+        filename = os.path.join(REPO_PACKAGE_DIR, 'category.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(REPOSITORY_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' % (os.path.join(REPO_PACKAGE_DIR, 'category.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml'), 'w') as text_file:
+        filename = os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(UPDATES_POM_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' % (os.path.join(UPDATES_PACKAGE_DIR, 'pom.xml')))
+        print('  Generated %s.' % (filename))
 
-        with open(os.path.join(UPDATES_PACKAGE_DIR, 'category.xml'), 'w') as text_file:
+        filename = os.path.join(UPDATES_PACKAGE_DIR, 'category.xml')
+        with open(filename, 'w') as text_file:
             text_file.write(UPDATES_CATEGORY_TEMPLATE.safe_substitute(plugin_version=plugin_version))
-        print('  Generated %s.' % (os.path.join(UPDATES_PACKAGE_DIR, 'category.xml')))
+        print('  Generated %s.' % (filename))
 
         # Launch maven to build repository
         subprocess.call(['mvn', 'clean', 'verify'])
 
         # Commit/push this repository
-        print('  Calling git add...')
-        gitrepo.git.add('-A')
-        print('  Calling git commit...')
-        gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version))
-        print('  Calling git tag...')
-        gitrepo.git.tag(plugin_version)
-        print('  Calling git push...')
-        gitrepo.git.push('--quiet', '--set-upstream', 'origin-with-token', 'master')
-        print('  Calling git push tags...')
-        gitrepo.git.push('origin-with-token', '--tags')
-        print('  Git update and push complete.')
+        try:
+            print('  Adding objects to git index...')
+            git_result = gitrepo.git.add('-A', with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+            print('  Calling git commit...')
+            git_result = gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version), with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+            print('  Calling git tag...')
+            tag_ref = gitrepo.git.tag(plugin_version, with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+            print('  Calling git push...')
+            gir_result = gitrepo.git.push('--quiet', '--set-upstream', 'origin-with-token', 'master', with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+            print('  Calling git push tags...')
+            git_result = gitrepo.git.push('origin-with-token', '--tags', with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+            print('  Git update and push complete.')
+        except Exception as e:
+             sys.stderr.write(str(e))
+             sys.exit(1)
 
     else:
         sys.stderr.write('Cannot find release description for %s' % (z3_version))
