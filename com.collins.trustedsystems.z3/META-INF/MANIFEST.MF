@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Z3 Plugin
 Bundle-SymbolicName: com.collins.trustedsystems.z3
-Bundle-Version: 4.8.3
+Bundle-Version: 4.8.4
 Bundle-Activator: com.collins.trustedsystems.z3.Activator
 Bundle-Vendor: Collins Aerospace
 Require-Bundle: org.eclipse.core.runtime

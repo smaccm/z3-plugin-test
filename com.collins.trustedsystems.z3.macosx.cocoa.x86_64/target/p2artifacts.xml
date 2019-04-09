@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.3'>
+  <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.4'>
     <properties size='5'>
-      <property name='artifact.size' value='8273985'/>
-      <property name='download.size' value='8273985'/>
+      <property name='artifact.size' value='8026201'/>
+      <property name='download.size' value='8026201'/>
       <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
       <property name='maven-artifactId' value='com.collins.trustedsystems.z3.macosx.cocoa.x86_64'/>
-      <property name='maven-version' value='4.8.3'/>
+      <property name='maven-version' value='4.8.4'/>
     </properties>
   </artifact>
 </artifacts>

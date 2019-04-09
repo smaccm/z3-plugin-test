@@ -1,14 +1,13 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: com.collins.trustedsystems.z3.win32.win32.x86_6
- 4
-Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;
- singleton:=true
-Bundle-Name: Z3 Linux GTK x86_64 binaries
-Bundle-Version: 4.8.3
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Eclipse-PlatformFilter: (& (osgi.os=win32) (osgi.ws=win32) (osgi.arch=
- x86_64) )
+Bundle-Name: Z3 Linux GTK x86_64 binaries
+Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;si
+ ngleton:=true
+Bundle-Version: 4.8.4
 Bundle-Vendor: Collins Aerospace
-Fragment-Host: com.collins.trustedsystems.z3;bundle-version="4.8.3"
+Fragment-Host: com.collins.trustedsystems.z3;bundle-version="4.8.4"
+Automatic-Module-Name: com.collins.trustedsystems.z3.win32.win32.x86_64
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-PlatformFilter: (& (osgi.os=win32) (osgi.ws=win32) (osgi.arch=x8
+ 6_64) )
 

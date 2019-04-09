@@ -2,20 +2,20 @@
 <?metadataRepository version='1.2.0'?>
 <repository name='TychoTargetPlatform' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='0.0.1'>
   <units size='16'>
-    <unit id='com.collins.trustedsystems.z3' version='4.8.3' singleton='false' generation='2'>
-      <update id='com.collins.trustedsystems.z3' range='[0.0.0,4.8.3)' severity='0'/>
+    <unit id='com.collins.trustedsystems.z3' version='4.8.4' singleton='false' generation='2'>
+      <update id='com.collins.trustedsystems.z3' range='[0.0.0,4.8.4)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
         <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3'/>
-        <property name='maven-version' value='4.8.3'/>
+        <property name='maven-version' value='4.8.4'/>
       </properties>
       <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' version='4.8.3'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3' version='4.8.3'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' version='4.8.4'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3' version='4.8.4'/>
         <provided namespace='java.package' name='com.collins.trustedsystems.z3' version='0.0.0'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3' version='4.8.3'>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3' version='4.8.4'>
           <properties size='1'>
             <property name='type' value='osgi.bundle'/>
           </properties>
@@ -27,13 +27,13 @@
         <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
       </requires>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3' version='4.8.3'/>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3' version='4.8.4'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3&#xA;Bundle-Version: 4.8.3
+            Bundle-SymbolicName: com.collins.trustedsystems.z3&#xA;Bundle-Version: 4.8.4
           </instruction>
         </instructions>
       </touchpointData>
@@ -89,41 +89,41 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.3' generation='2'>
-      <update id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[0.0.0,4.8.3)' severity='0'/>
+    <unit id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.4' generation='2'>
+      <update id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[0.0.0,4.8.4)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
         <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3.macosx.cocoa.x86_64'/>
-        <property name='maven-version' value='4.8.3'/>
+        <property name='maven-version' value='4.8.4'/>
       </properties>
       <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.3'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.3'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.4'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.4'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.4'>
           <properties size='1'>
             <property name='type' value='osgi.fragment'/>
           </properties>
         </provided>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.8.3'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.8.4'/>
       </provides>
       <requires size='2'>
-        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.8.3'/>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.8.4'/>
         <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
       </requires>
       <filter>
         (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
       </filter>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.3'/>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' version='4.8.4'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true&#xA;Bundle-Version: 4.8.3&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.8.3&quot;
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true&#xA;Bundle-Version: 4.8.4&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.8.4&quot;
           </instruction>
         </instructions>
       </touchpointData>
@@ -238,41 +238,41 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.3' generation='2'>
-      <update id='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[0.0.0,4.8.3)' severity='0'/>
+    <unit id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.4' generation='2'>
+      <update id='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[0.0.0,4.8.4)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
         <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3.linux.gtk.x86_64'/>
-        <property name='maven-version' value='4.8.3'/>
+        <property name='maven-version' value='4.8.4'/>
       </properties>
       <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.3'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.3'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.4'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.4'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.4'>
           <properties size='1'>
             <property name='type' value='osgi.fragment'/>
           </properties>
         </provided>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.8.3'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.8.4'/>
       </provides>
       <requires size='2'>
-        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.8.3'/>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.8.4'/>
         <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
       </requires>
       <filter>
         (&amp;(osgi.arch=x86_64)(osgi.os=linux)(osgi.ws=gtk))
       </filter>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.3'/>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.linux.gtk.x86_64' version='4.8.4'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3.linux.gtk.x86_64;singleton:=true&#xA;Bundle-Version: 4.8.3&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.8.3&quot;
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.linux.gtk.x86_64;singleton:=true&#xA;Bundle-Version: 4.8.4&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.8.4&quot;
           </instruction>
         </instructions>
       </touchpointData>
@@ -645,7 +645,7 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.collins.trustedsystems.z3.feature.feature.jar' version='4.8.3'>
+    <unit id='com.collins.trustedsystems.z3.feature.feature.jar' version='4.8.4'>
       <properties size='7'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
         <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
@@ -653,18 +653,18 @@
         <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
-        <property name='maven-version' value='4.8.3'/>
+        <property name='maven-version' value='4.8.4'/>
       </properties>
       <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' version='4.8.3'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' version='4.8.4'/>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='com.collins.trustedsystems.z3.feature' version='4.8.3'/>
+        <provided namespace='org.eclipse.update.feature' name='com.collins.trustedsystems.z3.feature' version='4.8.4'/>
       </provides>
       <filter>
         (org.eclipse.update.install.features=true)
       </filter>
       <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='com.collins.trustedsystems.z3.feature' version='4.8.3'/>
+        <artifact classifier='org.eclipse.update.feature' id='com.collins.trustedsystems.z3.feature' version='4.8.4'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
@@ -683,8 +683,8 @@
         Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
       </copyright>
     </unit>
-    <unit id='com.collins.trustedsystems.z3.feature.feature.group' version='4.8.3' singleton='false'>
-      <update id='com.collins.trustedsystems.z3.feature.feature.group' range='[0.0.0,4.8.3)' severity='0'/>
+    <unit id='com.collins.trustedsystems.z3.feature.feature.group' version='4.8.4' singleton='false'>
+      <update id='com.collins.trustedsystems.z3.feature.feature.group' range='[0.0.0,4.8.4)' severity='0'/>
       <properties size='8'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Plugin'/>
         <property name='org.eclipse.equinox.p2.description' value='Z3 Plugins for Eclipse'/>
@@ -693,29 +693,29 @@
         <property name='org.eclipse.equinox.p2.type.group' value='true'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3.feature'/>
-        <property name='maven-version' value='4.8.3'/>
+        <property name='maven-version' value='4.8.4'/>
       </properties>
       <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.group' version='4.8.3'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.group' version='4.8.4'/>
       </provides>
       <requires size='5'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' range='[4.8.3,4.8.3]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[4.8.3,4.8.3]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3' range='[4.8.4,4.8.4]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.linux.gtk.x86_64' range='[4.8.4,4.8.4]'>
           <filter>
             (&amp;(osgi.arch=x86_64)(osgi.os=linux)(osgi.ws=gtk))
           </filter>
         </required>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[4.8.3,4.8.3]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.macosx.cocoa.x86_64' range='[4.8.4,4.8.4]'>
           <filter>
             (&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))
           </filter>
         </required>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[4.8.3,4.8.3]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[4.8.4,4.8.4]'>
           <filter>
             (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
           </filter>
         </required>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' range='[4.8.3,4.8.3]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.feature.feature.jar' range='[4.8.4,4.8.4]'>
           <filter>
             (org.eclipse.update.install.features=true)
           </filter>
@@ -731,41 +731,41 @@
         Z3&#xA;Copyright (c) Microsoft Corporation&#xA;All rights reserved.
       </copyright>
     </unit>
-    <unit id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.3' generation='2'>
-      <update id='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[0.0.0,4.8.3)' severity='0'/>
+    <unit id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.4' generation='2'>
+      <update id='com.collins.trustedsystems.z3.win32.win32.x86_64' range='[0.0.0,4.8.4)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='Z3 Linux GTK x86_64 binaries'/>
         <property name='org.eclipse.equinox.p2.provider' value='Collins Aerospace'/>
         <property name='maven-groupId' value='com.collins.trustedsystems.z3'/>
         <property name='maven-artifactId' value='com.collins.trustedsystems.z3.win32.win32.x86_64'/>
-        <property name='maven-version' value='4.8.3'/>
+        <property name='maven-version' value='4.8.4'/>
       </properties>
       <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.3'/>
-        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.3'/>
-        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.4'/>
+        <provided namespace='osgi.bundle' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.4'/>
+        <provided namespace='osgi.identity' name='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.4'>
           <properties size='1'>
             <property name='type' value='osgi.fragment'/>
           </properties>
         </provided>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.8.3'/>
+        <provided namespace='osgi.fragment' name='com.collins.trustedsystems.z3' version='4.8.4'/>
       </provides>
       <requires size='2'>
-        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.8.3'/>
+        <required namespace='osgi.bundle' name='com.collins.trustedsystems.z3' range='4.8.4'/>
         <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
       </requires>
       <filter>
         (&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
       </filter>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.3'/>
+        <artifact classifier='osgi.bundle' id='com.collins.trustedsystems.z3.win32.win32.x86_64' version='4.8.4'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;singleton:=true&#xA;Bundle-Version: 4.8.3&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.8.3&quot;
+            Bundle-SymbolicName: com.collins.trustedsystems.z3.win32.win32.x86_64;singleton:=true&#xA;Bundle-Version: 4.8.4&#xA;Fragment-Host: com.collins.trustedsystems.z3;bundle-version=&quot;4.8.4&quot;
           </instruction>
         </instructions>
       </touchpointData>

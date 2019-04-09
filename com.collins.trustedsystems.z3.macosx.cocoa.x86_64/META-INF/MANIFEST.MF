@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Z3 Linux GTK x86_64 binaries
 Bundle-SymbolicName: com.collins.trustedsystems.z3.macosx.cocoa.x86_64;singleton:=true
-Bundle-Version: 4.8.3
+Bundle-Version: 4.8.4
 Bundle-Vendor: Collins Aerospace
-Fragment-Host: com.collins.trustedsystems.z3;bundle-version="4.8.3"
+Fragment-Host: com.collins.trustedsystems.z3;bundle-version="4.8.4"
 Automatic-Module-Name: com.collins.trustedsystems.z3.macosx.cocoa.x86_64
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Eclipse-PlatformFilter: (& (osgi.os=macosx) (osgi.ws=cocoa) (osgi.arch=x86_64) )

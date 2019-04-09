@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.collins.trustedsystems.z3.feature_4.8.3.jar" id="com.collins.trustedsystems.z3.feature" version="4.8.3">
+   <feature url="features/com.collins.trustedsystems.z3.feature_4.8.4.jar" id="com.collins.trustedsystems.z3.feature" version="4.8.4">
       <category name="main"/>
    </feature>
    <category-def name="main" label="Z3-Plugin"/>
