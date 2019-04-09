@@ -860,6 +860,18 @@ def package_plugin(plugin_version, z3_version, z3_releases):
 
         gitrepo = Repo(os.getcwd())
 
+        # Since we're in detached head state, make a branch on which to work
+        try:
+            print('  Creating branch for building %s...' % (plugin_version))
+            git_result = gitrepo.git.branch('-b', plugin_version, with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+        except Exception as e:
+             sys.stderr.write(str(e))
+             sys.exit(1)
+
         release_assets_by_name = {x.name : x for x in release_description.assets()}
 
         filename = 'pom.xml'
@@ -1013,6 +1025,18 @@ def package_plugin(plugin_version, z3_version, z3_releases):
                 sys.exit(git_result[0])
             print('  Calling git commit...')
             git_result = gitrepo.git.commit('-m', 'Package plugin version %s' % (plugin_version), with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+            print('  Calling git checkout master...')
+            git_result = gitrepo.git.checkout('master', with_extended_output=True)
+            print(git_result[1])
+            if (git_result[0] != 0) :
+                sys.stderr.write(git_result[2])
+                sys.exit(git_result[0])
+            print('  Calling git merge %s...' % (plugin_version))
+            git_result = gitrepo.git.merge(plugin_version, with_extended_output=True)
             print(git_result[1])
             if (git_result[0] != 0) :
                 sys.stderr.write(git_result[2])
