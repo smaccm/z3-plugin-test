@@ -863,7 +863,7 @@ def package_plugin(plugin_version, z3_version, z3_releases):
         # Since we're in detached head state, make a branch on which to work
         try:
             print('  Creating branch for building %s...' % (plugin_version))
-            git_result = gitrepo.git.branch('-b', plugin_version, with_extended_output=True)
+            git_result = gitrepo.git.checkout('-b', plugin_version, with_extended_output=True)
             print(git_result[1])
             if (git_result[0] != 0) :
                 sys.stderr.write(git_result[2])
